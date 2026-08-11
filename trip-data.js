@@ -1,0 +1,222 @@
+// Single source of truth for itinerary data, used by both the map (map.html) and the DC.
+export const days = [
+  {
+    id: "J0", date: "Mercredi 30 Septembre → Jeudi 1er Octobre 2026", title: "Vol vers le Japon → Arrivée à Narita", kanji: "成田",
+    color: "oklch(66% 0.17 0)",
+    sleep: { place: "Narita", tbd: false, note: "International Garden Hotel Narita — 286-0133 Chiba, Narita, Yoshikura 241-1, Japon" },
+    stops: [
+      { name: "Vol Paris (CDG) → Tokyo (NRT)", address: "Aéroport Charles-de-Gaulle, Paris, France", note: "Eva Airways BR88 / BR184 — 30 sept. 11h20 → 1er oct. 12h25 (1 escale, 18h05, classe économique)", lat: 49.0097, lng: 2.5479, noMap: true },
+      { name: "International Garden Hotel Narita", address: "286-0133 Chiba, Narita, Yoshikura 241-1, Japon", note: "Nuit du 1er au 2 octobre — n° d'enregistrement 688200819 (recommandé ZY26081017303790)", lat: 35.7645, lng: 140.3606, isSleep: true },
+    ],
+  },
+  {
+    id: "J1", date: "Vendredi 2 Octobre 2026", title: "Chiba → Yokosuka → Kamakura", kanji: "鎌倉",
+    color: "oklch(66% 0.17 20)",
+    sleep: { place: "Kamakura", tbd: false, note: "ハセノ島 Hotel Cottage — 2-14-15 ハセノ島, Kamakura, Kanagawa, Japon" },
+    stops: [
+      { name: "JDM Rental Japan | Tokyo Branch", address: "555-1 Kosuge, Narita, Chiba 286-0127, Japon", note: "RDV 10h00 — environ 9 km depuis l'hôtel, 15-20 minutes en voiture/taxi (trop loin à pied, ~1h50). Récupération de la Nissan Skyline R33", lat: 35.833, lng: 140.322, leg: { time: "15-20 minutes", km: 9 } },
+      { name: "(有）RE雨宮", address: "439-10 Nanae, Tomisato, Chiba 286-0221, Japon", note: "Horaires 9h30 - 18h00", lat: 35.751, lng: 140.253, leg: { time: "15 minutes", km: 10 } },
+      { name: "ラウヴェルトベグリッフ (RWB)", address: "1 Chome-14-33 Fujigokoro, Kashiwa, Chiba 277-0034, Japon", note: "Trajet depuis l'étape précédente à valider", info: "RAUH-Welt Begriff, atelier de préparation Porsche fondé par Akira Nakai, connu dans le monde entier pour ses kits large carrosserie sur 911.", lat: 35.8676, lng: 139.9700 },
+      { name: "Studie AG Tokyo", address: "2 Chome−２７−22 Wakamatsucho, Fuchu, Tokyo 183-0005, Japon", note: "Horaires 10h00 - 19h00", info: "Atelier BMW fondé en 1995 à Yokohama par Bob Suzuki, considéré comme le spécialiste BMW le plus reconnu du Japon ; l'enseigne aligne aussi sa propre équipe en Super GT.", lat: 35.6845, lng: 139.477, leg: { time: "1h20", km: 86 } },
+      { name: "Tomei Auto Parts", address: "5-chome-4-27 Tsuruma, Machida, Tokyo 194-0004, Japon", note: "Horaires à vérifier", info: "Fabricant de pièces performance fondé en 1968, historiquement spécialisé sur les moteurs Nissan (RB26, SR20...) ; siège et showroom à Machida.", lat: 35.546, lng: 139.446, leg: { time: "50 minutes", km: 50 } },
+      { name: "Up Garage Yokohama Machida Chief Store", address: "5-chome-1-46 Tsuruma, Machida, Tokyo 194-0004, Japon", note: "Juste à côté — Horaires 10h00 - 20h00", info: "Plus grande chaîne japonaise de pièces auto et moto d'occasion, avec plus de 200 magasins à travers le pays.", lat: 35.5465, lng: 139.4455, leg: { time: "à pied", km: 0 } },
+      { name: "Autobacs ASM Yokohama", address: "2 Chome-4-7 Shinyamashita, Naka Ward, Yokohama, Kanagawa 231-0801, Japon", note: "Horaires 10h00 - 18h00", info: "Antenne d'Autobacs, la plus grande chaîne japonaise d'accessoires et d'entretien automobile.", lat: 35.44, lng: 139.652, leg: { time: "25 minutes", km: 25 } },
+      { name: "Mine's", address: "5 Chome-7-25 Hayashi, Yokosuka, Kanagawa 238-0315, Japon", note: "Horaires 9h00 - 18h00", info: "Préparateur fondé en 1985 par Michizo Niikura, mondialement connu pour ses Nissan Skyline GT-R (R32 à R35) et sa philosophie de 'total balance' plutôt que la puissance brute.", lat: 35.285, lng: 139.61, leg: { time: "35 minutes", km: 45 } },
+      { name: "Dormir à Kamakura — ハセノ島 Hotel Cottage", address: "2-14-15 ハセノ島, Kamakura, Kanagawa, Japon", note: "À 30 min et 17 km du centre-ville", lat: 35.3193, lng: 139.546, leg: { time: "30 minutes", km: 17 }, isSleep: true },
+    ],
+  },
+  {
+    id: "J2", date: "Samedi 3 Octobre 2026", title: "Hakone", kanji: "箱根",
+    color: "oklch(66% 0.17 50)",
+    sleep: { place: "Gotenba", tbd: false, note: "Hotel KAN-RAKU Premier Fujisan — 165-1 Juyuzawa, Gotemba, Shizuoka 412-0041, Japon (n° d'enregistrement 688217523)" },
+    stops: [
+      { name: "Hakone Turnpike Ltd. Road Management Office", address: "2 Chome−22−1, Hayakawa, Odawara, Kanagawa 250-0021, Japon", note: "Depuis le centre de Kamakura", info: "Route à péage de 15,8 km ouverte en 1955 entre Odawara et Hakone, surnommée le « Nürburgring japonais » : terrain d'essai historique des constructeurs et lieu de rassemblements automobiles.", lat: 35.244, lng: 139.135, leg: { time: "55 minutes", km: 45 } },
+      { name: "Mt. Taikan Observation Deck", address: "Hayakawa, Odawara, Kanagawa 250-0021, Japon", info: "Point de vue au sommet du Hakone Turnpike, avec panorama sur le Mont Fuji ; lieu de rendez-vous classique des événements automobiles.", lat: 35.235, lng: 139.13, leg: { time: "15 minutes", km: 15 } },
+      { name: "Point de vue Tsubakidai (Tsubaki Line)", address: "Hakone, Kanagawa, Japon", note: "Arrêt sur la Tsubaki Line", info: "Route de montagne bordée de camélias (tsubaki) qui donne son nom à la ligne ; l'un des parcours sinueux prisés des amateurs de conduite à Hakone.", lat: 35.222, lng: 139.03 },
+      { name: "Bikers Paradise South Hakone", address: "Hakone, Kanagawa, Japon", info: "Point de rassemblement connu des motards, sur les routes de montagne sinueuses du sud de Hakone.", lat: 35.212, lng: 139.02 },
+      { name: "Mikuni Pass", address: "Hakone, Kanagawa, Japon", note: "Point de vue", info: "Col de montagne à la limite entre Hakone et la péninsule d'Izu, avec vue sur le Mont Fuji et la baie de Suruga par temps dégagé.", lat: 35.228, lng: 138.998 },
+      { name: "Hakone Ashinoko Observation Park", address: "Hakone, Kanagawa, Japon", info: "Point de vue sur le lac Ashi (Ashinoko), lac volcanique emblématique de Hakone, avec le Mont Fuji en toile de fond par beau temps.", lat: 35.205, lng: 139.023 },
+      { name: "Dormir à Gotenba — Hotel KAN-RAKU Premier Fujisan", address: "165-1 Juyuzawa, Gotemba, Shizuoka 412-0041, Japon", note: "N° d'enregistrement 688217523", lat: 35.305, lng: 138.935, isSleep: true },
+    ],
+  },
+  {
+    id: "J3", date: "Dimanche 4 Octobre 2026", title: "Fuji Speedway → Chiba", kanji: "富士",
+    color: "oklch(66% 0.17 80)",
+    sleep: { place: "Chiba", tbd: false, note: "International Garden Hotel Narita — rendre la voiture le lundi matin à JDM" },
+    stops: [
+      { name: "Fuji Speedway — Mazda Fan Festa 2026", address: "Oyama, Sunto District, Shizuoka, Japon", note: "Journée au circuit — billet à acheter sur place, 4500 yens", info: "Circuit historique au pied du Mont Fuji, qui a accueilli le Grand Prix du Japon de F1 et accueille aujourd'hui le Super GT et le WEC.", lat: 35.3717, lng: 138.928 },
+      { name: "Hard Off Kohnan Keiyo Funabashi Inter", address: "Funabashi, Chiba, Japon", note: "Sur la route vers l'hôtel", info: "Chaîne japonaise de magasins d'occasion (électronique, jeux, instruments, objets divers).", lat: 35.7089, lng: 139.9903, leg: { time: "1h50", km: 130 } },
+      { name: "Hard Off Kamagaya Michinobe", address: "Kamagaya, Chiba, Japon", note: "Sur la route vers l'hôtel", info: "Chaîne japonaise de magasins d'occasion (électronique, jeux, instruments, objets divers).", lat: 35.771, lng: 140.0, leg: { time: "20 minutes", km: 14 } },
+      { name: "Dormir à Narita — International Garden Hotel Narita", address: "286-0133 Chiba, Narita, Yoshikura 241-1, Japon", note: "Rendre la voiture lundi matin à JDM Car Rental", lat: 35.7645, lng: 140.3606, leg: { time: "30 minutes", km: 15 }, isSleep: true },
+    ],
+  },
+  {
+    id: "J4", date: "Lundi 5 Octobre 2026", title: "Chiba → Nagoya", kanji: "名古屋",
+    color: "oklch(66% 0.17 110)",
+    sleep: { place: "Nagoya", tbd: false, note: "Just Inn Premium Nagoya Station — Naka-ku Marunouchi 1-13-9, Nagoya, Aichi, Japon (arrivée 15h00, 2 nuits jusqu'au 7 octobre 11h00)" },
+    stops: [
+      { name: "JDM Car Rental — échange de véhicule", address: "Narita, Chiba, Japon", note: "Déposer la voiture actuelle, récupérer la GR86 — 10h00", lat: 35.833, lng: 140.322 },
+      { name: "Dormir à Nagoya — Just Inn Premium Nagoya Station", address: "Naka-ku Marunouchi 1-13-9, Nagoya, Aichi, Japon", note: "Arrivée à partir de 15h00", lat: 35.1815, lng: 136.9066, isSleep: true },
+    ],
+  },
+  {
+    id: "J5", date: "Mardi 6 Octobre 2026", title: "Toyota → Suzuka", kanji: "愛知",
+    color: "oklch(66% 0.17 140)",
+    sleep: { place: "Nagoya", tbd: false },
+    stops: [
+      { name: "Musée de l'automobile Toyota", address: "Nagakute, Aichi, Japon", note: "Billets pas encore achetés — à prendre dès que possible", info: "Collection retraçant l'histoire de l'automobile japonaise et mondiale, du XIXe siècle aux voitures modernes.", lat: 35.201, lng: 137.053 },
+      { name: "Circuit de Suzuka / Honda Racing Gallery", address: "Suzuka, Mie, Japon", note: "Vérifier l'événement — le circuit est normalement dédié à un événement privé ce jour-là", info: "Circuit mythique en forme de huit, propriété de Honda, qui accueille le Grand Prix du Japon de F1 ; la Honda Racing Gallery y expose l'histoire des moteurs et voitures de course de la marque.", lat: 34.8431, lng: 136.5407, leg: { time: "1h15", km: 75 }, tbd: true },
+      { name: "Dormir à Nagoya — Just Inn Premium Nagoya Station", address: "Naka-ku Marunouchi 1-13-9, Nagoya, Aichi, Japon", lat: 35.1815, lng: 136.9066, isSleep: true },
+    ],
+  },
+  {
+    id: "J6", date: "Mercredi 7 Octobre 2026", title: "Ghibli Park → Nara → Osaka", kanji: "大阪",
+    color: "oklch(66% 0.17 170)",
+    sleep: { place: "Osaka", tbd: false, note: "Toyoko Inn Osaka Namba Nippombashi — Naniwa-ku Nippombashi 4-11-4, Osaka, Japon (arrivée 7 oct. 15h00, départ 9 oct. 10h00)" },
+    stops: [
+      { name: "Ghibli Park", address: "Nagakute, Aichi, Japon", note: "10h00 — billet pris (Klook)", info: "Parc thématique ouvert en 2022 dans le parc Expo 2005 Aichi, inspiré des univers du Studio Ghibli (Totoro, Le Château ambulant...).", lat: 35.198, lng: 137.046 },
+      { name: "Wakakusa Peak Parking Lot", address: "Nara, Japon", note: "Arrivée visée au coucher du soleil", info: "Colline de 342 m derrière le Tōdai-ji, accessible par une route à péage, réputée pour son panorama sur Nara au coucher du soleil et ses cerfs en liberté.", lat: 34.689, lng: 135.846, leg: { time: "2h05", km: 155 } },
+      { name: "Dormir à Osaka — Toyoko Inn Osaka Namba Nippombashi", address: "Naniwa-ku Nippombashi 4-11-4, Osaka, Japon", lat: 34.6937, lng: 135.5023, isSleep: true },
+    ],
+  },
+  {
+    id: "J7", date: "Jeudi 8 Octobre 2026", title: "Osaka & Kobe", kanji: "神戸",
+    color: "oklch(66% 0.17 200)",
+    sleep: { place: "Osaka", tbd: false },
+    stops: [
+      { name: "G-lion Museum", address: "Osaka, Japon", note: "Voiture ou train selon le logement", info: "Musée de voitures anciennes installé dans un entrepôt en briques rouges du port d'Osaka datant de 1923 ; environ 80 véhicules d'exception, dont des Rolls-Royce et une Toyota 2000GT.", lat: 34.58, lng: 135.55 },
+      { name: "East Rokko Observatory", address: "Kobe, Hyōgo, Japon", info: "Le Mont Rokkō domine Kobe et la baie d'Osaka ; sa vue nocturne compte parmi les trois plus belles du Japon.", lat: 34.755, lng: 135.265, leg: { time: "41 minutes", km: 29 } },
+      { name: "Mt. Rokkō Tenran Observatory", address: "Kobe, Hyōgo, Japon", info: "Second point de vue du Mont Rokkō, avec panorama sur Kobe, Osaka et la mer intérieure de Seto.", lat: 34.769, lng: 135.245, leg: { time: "25 minutes", km: 10 } },
+      { name: "Higashi Osaka Parking Area (direction Wakayama)", address: "Osaka, Japon", note: "Si activité le soir", lat: 34.6, lng: 135.58, tbd: true },
+      { name: "Dotonbori", address: "Osaka, Japon", note: "Le reste de la soirée pour manger", info: "Quartier animé le long du canal Dōtonbori, célèbre pour ses enseignes lumineuses (dont le panneau Glico) et sa street food.", lat: 34.6687, lng: 135.5013 },
+      { name: "Nippombashi", address: "Naniwa-ku, Osaka, Japon", note: "Quartier du logement (Toyoko Inn)", info: "Quartier d'Osaka surnommé le « Akihabara du Kansai », spécialisé dans l'électronique, le manga, l'anime et les jeux vidéo.", lat: 34.6624, lng: 135.5063, leg: { time: "10 minutes", km: 1 } },
+      { name: "America Mura", address: "Osaka, Japon", info: "Quartier branché d'Osaka connu pour son mélange de mode vintage américaine, streetwear et graffitis, prisé de la jeunesse locale.", lat: 34.6717, lng: 135.4977, leg: { time: "10 minutes", km: 1 } },
+    ],
+  },
+  {
+    id: "J8", date: "Vendredi 9 Octobre 2026", title: "Dotonbori → Kyoto", kanji: "京都",
+    color: "oklch(66% 0.17 230)",
+    sleep: { place: "Kyoto", tbd: false, note: "Kyoto Plaza Hotel — Minami-ku Nishikujo Zaou-cho 28agaru, Kyoto, Japon (arrivée 9 oct. 15h00-22h00, départ 10 oct. 10h00) — les autres arrivent" },
+    stops: [
+      { name: "Dotonbori", address: "Osaka, Japon", note: "Le matin", lat: 34.6687, lng: 135.5013 },
+      { name: "Arashiyama Takao Pk Wy", address: "Kyoto, Japon", note: "Selon l'emplacement du logement à Kyoto", info: "Route pittoresque desservant Arashiyama, quartier de Kyoto connu pour sa forêt de bambous et le pont Togetsukyo.", lat: 35.048, lng: 135.65 },
+      { name: "Kyoto — Kyoto Plaza Hotel", address: "Minami-ku Nishikujo Zaou-cho 28agaru, Kyoto, Japon", note: "Journée tranquille, les autres seront là", lat: 35.0116, lng: 135.7681, isSleep: true },
+    ],
+  },
+  {
+    id: "J9", date: "Samedi 10 → Lundi 12 Octobre 2026", title: "Takayama & Shirakawa-go", kanji: "高山",
+    color: "oklch(66% 0.17 260)",
+    sleep: { place: "Takayama puis Nakatsugawa", tbd: true, note: "Logé chez des amis à Takayama (10-12 oct.), adresse à définir — puis AB Hotel Nakatsugawa le 12 oct." },
+    stops: [
+      { name: "Départ vers Takayama", address: "Gifu, Japon", info: "Vieille ville de montagne aux ruelles de l'époque d'Edo bien préservées, dans les Alpes japonaises.", lat: 36.1461, lng: 137.252 },
+      { name: "Logement chez des amis", address: "Takayama, Gifu, Japon", note: "Arrivée 10 oct., départ 12 oct. — adresse à définir", lat: 36.1461, lng: 137.252, isSleep: true },
+      { name: "Shirakawa-go", address: "Gifu, Japon", note: "Aller-retour depuis Takayama le 11 octobre — se garer au Shirakawagō Seseragi Park Parking Lot", info: "Village inscrit au patrimoine mondial de l'UNESCO, connu pour ses fermes traditionnelles au toit de chaume gassho-zukuri.", lat: 36.258, lng: 136.906 },
+      { name: "Nakatsugawa — AB Hotel Nakatsugawa", address: "258-1 Tegano, Nakatsugawa, Gifu 508-0015, Japon", note: "Arrivée 12 oct. 15h00-0h00, départ 13 oct. 10h00", lat: 35.497, lng: 137.493, isSleep: true },
+    ],
+  },
+  {
+    id: "J12", date: "Mardi 13 Octobre 2026", title: "Nakasendo → Fujiyoshida", kanji: "木曽",
+    color: "oklch(66% 0.17 290)",
+    sleep: { place: "Fujiyoshida", tbd: false, note: "Airbnb — 5-chōme-11-11 Kamiyoshida, Fujiyoshida, Yamanashi 403-0005, Japon" },
+    stops: [
+      { name: "Départ de Nakatsugawa vers le Nakasendo", address: "Gifu, Japon", note: "Randonnée de 3h", info: "Ancienne route de l'époque d'Edo reliant Kyoto à Edo (Tokyo) ; le tronçon Magome-Tsumago est l'un des mieux préservés, pavé et bordé de forêts.", lat: 35.528, lng: 137.567 },
+      { name: "Kamikochi", address: "Nagano, Japon", note: "Selon l'heure après la randonnée", info: "Vallée alpine préservée des Alpes japonaises du Nord, fermée à la circulation privée ; départ de nombreuses randonnées.", lat: 36.25, lng: 137.636 },
+      { name: "Lac Shirakaba", address: "Nagano, Japon", info: "Lac de montagne à environ 1400 m d'altitude sur les hauts plateaux de Nagano, entouré de bouleaux (shirakaba) et point de départ de la Venus Line.", lat: 36.093, lng: 138.333 },
+      { name: "ビーナスライン (Venus Line)", address: "Nagano, Japon", info: "Route de montagne panoramique reliant les hauts plateaux de Nagano, entre alpages et vues dégagées.", lat: 36.05, lng: 138.3 },
+      { name: "Airbnb à Fujiyoshida", address: "5-chōme-11-11 Kamiyoshida, Fujiyoshida, Yamanashi 403-0005, Japon", lat: 35.488, lng: 138.806, isSleep: true },
+    ],
+  },
+  {
+    id: "J13", date: "Mercredi 14 Octobre 2026", title: "Lac Kawaguchi", kanji: "河口湖",
+    color: "oklch(66% 0.17 320)",
+    sleep: { place: "Fujiyoshida", tbd: false },
+    stops: [
+      { name: "Lawson Fujikawaguchiko Town Hall", address: "Fujikawaguchiko, Yamanashi, Japon", note: "Photo devant le Lawson", info: "Ce Lawson est devenu un spot photo mondialement connu : le Mont Fuji semble surgir juste au-dessus du magasin.", lat: 35.487, lng: 138.769 },
+      { name: "Lac Kawaguchi", address: "Yamanashi, Japon", note: "Balade autour du lac", info: "L'un des cinq lacs de Fuji, le plus accessible depuis Tokyo, réputé pour ses vues du Mont Fuji se reflétant dans l'eau.", lat: 35.5, lng: 138.75, leg: { time: "10 minutes", km: 3 } },
+    ],
+  },
+  {
+    id: "J14", date: "Jeudi 15 Octobre 2026", title: "Nissan Heritage → vers Tokyo", kanji: "神奈川",
+    color: "oklch(66% 0.17 350)",
+    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "Hotel Route-Inn Tokyo Ikebukuro — Toshima-ku Higashiikebukuro 3-5-5, Tokyo, Japon (arrivée 14 oct. 15h00, départ 17 oct. 10h00)" },
+    stops: [
+      { name: "Nissan Heritage Collection", address: "Zama, Kanagawa, Japon", note: "Flexible entre le 14, 15 et 16 octobre selon les créneaux ouverts (à vérifier régulièrement) — durée ~90 min, sessions 10h00-11h30 ou 14h00-15h30", info: "Centre d'archives officiel de Nissan, qui conserve plusieurs centaines de véhicules historiques de la marque ; visite sur réservation uniquement.", lat: 35.487, lng: 139.402, tbd: true },
+      { name: "Dormir à Ikebukuro — Hotel Route-Inn Tokyo Ikebukuro", address: "Toshima-ku Higashiikebukuro 3-5-5, Tokyo, Japon", lat: 35.7295, lng: 139.7109, isSleep: true },
+    ],
+  },
+  {
+    id: "J15", date: "Vendredi 16 Octobre 2026", title: "A-PIT Shinonome → restitution voiture", kanji: "東京",
+    color: "oklch(66% 0.17 10)",
+    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "Hotel Route-Inn Tokyo Ikebukuro — départ le 17 avant 10h00" },
+    stops: [
+      { name: "A-PIT Super Autobacs Shinonome", address: "Koto, Tokyo, Japon", note: "Journée du 16, avant de rendre la voiture", info: "Immense magasin phare d'Autobacs à Tokyo, dédié à l'accessoire et à la personnalisation automobile.", lat: 35.647, lng: 139.821 },
+      { name: "Nismo Omori Factory", address: "Ota, Tokyo, Japon", note: "Journée du 16, avant de rendre la voiture", info: "Atelier historique de préparation et de restauration de Nissan, où sont notamment restaurées les GT-R classiques dans le cadre du programme NISMO Heritage Parts.", lat: 35.586, lng: 139.728, leg: { time: "20 minutes", km: 12 } },
+    ],
+  },
+  {
+    id: "J16-21", date: "Samedi 17 → Mercredi 21 Octobre 2026", title: "Okinawa", kanji: "沖縄",
+    color: "oklch(62% 0.11 195)",
+    sleep: { place: "Onna, Okinawa", tbd: false, note: "2380, Onna, Kunigami Gun Onna Son, Okinawa Ken, 904-0411, Japan — arrivée 17 oct. dès 16h00, départ 21 oct. avant 11h00" },
+    stops: [
+      { name: "Vol Tokyo (NRT) → Naha (OKA)", address: "Aéroport de Narita, Chiba, Japon", note: "Peach Aviation MM507 — 14h30 → 17h40 (3h10, vol direct, classe économique)", lat: 35.7719, lng: 140.3929 },
+      { name: "Logement à Onna", address: "2380, Onna, Kunigami Gun Onna Son, Okinawa Ken, 904-0411, Japan", note: "Arrivée 17 oct. dès 16h00 — départ 21 oct. avant 11h00", lat: 26.5044, lng: 127.8642, isSleep: true },
+      { name: "Okinawa", address: "Japon", note: "Avec les autres — voir quoi faire", info: "Archipel subtropical au sud du Japon, à la culture Ryūkyū distincte, réputé pour ses plages et ses fonds marins.", lat: 26.2124, lng: 127.6809, tbd: true },
+    ],
+  },
+  {
+    id: "J21+", date: "Mercredi 21 Octobre → Vendredi 6 Novembre 2026", title: "Part.2 — Tokyo & environs", kanji: "二",
+    color: "oklch(55% 0.02 20)",
+    id: "J21", date: "Mercredi 21 Octobre 2026", title: "Retour à Tokyo", kanji: "帰",
+    color: "oklch(55% 0.02 20)",
+    sleep: { place: "Tokyo", tbd: true, note: "Quelques jours à Tokyo avec les autres — logement à définir" },
+    stops: [
+      { name: "Vol Naha (OKA) → Tokyo (NRT)", address: "Aéroport de Naha, Okinawa, Japon", note: "Peach Aviation MM504 — 12h15 → 14h55 (2h40, vol direct, classe économique)", lat: 26.1958, lng: 127.6458 },
+    ],
+  },
+  {
+    id: "J25", date: "Dimanche 25 Octobre 2026", title: "Tsukuba Circuit", kanji: "筑波",
+    color: "oklch(55% 0.05 250)",
+    sleep: null,
+    stops: [
+      { name: "Tsukuba Circuit", address: "Shimotsuma, Ibaraki, Japon", note: "Tsukuba Challenge Clubman Race Manche 4, Championnat Super FJ/FJ1500, Série Touring Car, Vitz Race in Tsukuba, Série VITA, JAF Circuit Trial, Super Kart, Finale GC Return, Tsukuba TC-2 Endurance 2h (finale) — entrée spectateur 2200¥, parking inclus", info: "Circuit historique de 2,045 km ouvert en 1970, à environ 60 km au nord de Tokyo ; accueille chaque semaine des courses, essais et journées de circuit.", lat: 36.1512, lng: 139.9212 },
+    ],
+  },
+  {
+    id: "J-nov1", date: "Dimanche 1er Novembre 2026", title: "Ebisu Circuit", kanji: "福島",
+    color: "oklch(55% 0.05 280)",
+    sleep: null,
+    stops: [
+      { name: "Ebisu Circuit — Rd.3 West Drift Course (200・280 class)", address: "Nihonmatsu, Fukushima, Japon", note: "Essais possibles la veille (sam. 31 oct.)", info: "Circuit spécialisé dans le drift, situé à Nihonmatsu (Fukushima), célèbre dans la scène drift japonaise.", lat: 37.548, lng: 140.472 },
+    ],
+  },
+  {
+    id: "J21-libre", date: "Jour à définir", title: "Activités encore à placer", kanji: "？",
+    color: "oklch(55% 0.02 20)",
+    sleep: null,
+    stops: [
+      { name: "Daikoku PA", address: "Yokohama, Kanagawa, Japon", note: "Jour à définir", info: "Aire de service artificielle sur la baie de Tokyo, connue mondialement comme lieu de rassemblement nocturne des amateurs de voitures japonaises.", lat: 35.4527, lng: 139.7597, tbd: true },
+      { name: "Umihotaru PA", address: "Kisarazu, Chiba, Japon", note: "Jour à définir", info: "Aire de service posée au milieu de la baie de Tokyo, sur le tracé de l'Aqua-Line, avec vue sur le pont-tunnel et la baie.", lat: 35.464, lng: 139.877, tbd: true },
+      { name: "Kabukicho", address: "Shinjuku, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Quartier de divertissement nocturne de Shinjuku, réputé pour ses néons, ses restaurants et sa vie nocturne animée.", lat: 35.6939, lng: 139.7034, tbd: true },
+      { name: "Sony Headquarters", address: "Minato, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Siège du groupe Sony, dans le quartier de Konan à Minato, Tokyo.", lat: 35.63, lng: 139.741, tbd: true },
+      { name: "Ginza Sony Park", address: "Chuo, Tokyo, Japon", note: "Jour à définir", info: "Espace urbain et culturel de Sony à Ginza, avec expositions et installations rotatives sur le site de l'ancien Sony Building.", lat: 35.6716, lng: 139.7649, tbd: true },
+      { name: "Twin Ring Motegi", address: "Motegi, Tochigi, Japon", note: "Jour à définir", info: "Circuit automobile appartenant à Honda, comprenant un ovale et un tracé routier ; a accueilli le Grand Prix moto du Japon et des courses NASCAR.", lat: 36.5266, lng: 140.2277, tbd: true },
+      { name: "Kojima Productions", address: "Shinagawa, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Studio de jeu vidéo fondé par Hideo Kojima après son départ de Konami, connu notamment pour la série Metal Gear Solid et Death Stranding.", lat: 35.617, lng: 139.73, tbd: true },
+      { name: "Pokémon Center", address: "Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Boutique officielle Pokémon, avec produits dérivés, figurines et cartes exclusives.", lat: 35.6297, lng: 139.7736, tbd: true },
+      { name: "Uniqlo Ginza", address: "Chuo, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Magasin phare mondial d'Uniqlo, dans le quartier commerçant chic de Ginza.", lat: 35.6712, lng: 139.7671, tbd: true },
+      { name: "Harajuku", address: "Shibuya, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Quartier de Shibuya connu pour la mode alternative de Takeshita-dori et l'ambiance plus paisible d'Omotesando.", lat: 35.6702, lng: 139.7026, tbd: true },
+      { name: "Akihabara", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Quartier emblématique de la culture geek et électronique de Tokyo, entre boutiques de manga, jeux vidéo et figurines.", lat: 35.6987, lng: 139.7714, tbd: true },
+      { name: "SURUGA-YA Akihabara Store", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Chaîne japonaise spécialisée dans les jeux vidéo, figurines et objets de collection d'occasion.", lat: 35.699, lng: 139.7717, tbd: true },
+      { name: "Sofmap AKIBA Amusement Hall", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Salle d'arcade et de jeux d'occasion de l'enseigne Sofmap, à Akihabara.", lat: 35.6989, lng: 139.7716, tbd: true },
+      { name: "Rassemblement de drift — derrière Nissui Logistics Tokyo Center", address: "Tokyo, Japon", note: "Jour à définir", info: "Point de rassemblement connu des amateurs de drift, à l'arrière du centre logistique Nissui à Tokyo.", lat: 35.62, lng: 139.79, tbd: true },
+      { name: "Reste du programme", address: "Tokyo, Japon", note: "Journées restantes encore à répartir", lat: 35.6812, lng: 139.7671, tbd: true },
+    ],
+  },
+  {
+    id: "J-retour", date: "Vendredi 6 → Samedi 7 Novembre 2026", title: "Vol retour vers Paris", kanji: "巴里",
+    color: "oklch(55% 0.02 20)",
+    sleep: null,
+    stops: [
+      { name: "Vol Tokyo (NRT) → Paris (CDG)", address: "Aéroport de Narita, Chiba, Japon", note: "Eva Airways BR197 / BR87 — 6 nov. 14h00 → 7 nov. 8h00 (1 escale, 26h, classe économique)", lat: 35.7719, lng: 140.3929, noMap: true },
+    ],
+  },
+];

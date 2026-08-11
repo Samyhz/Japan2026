@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    a { color: oklch(55% 0.14 15); }
+    a:hover { color: oklch(45% 0.14 15); }
+  </style>
+</helmet>
+<div style="min-height:100vh; font-family:'Noto Sans JP',sans-serif; color:oklch(22% 0.01 80); background-color:oklch(97% 0.006 80); background-attachment:fixed; background-image:radial-gradient(circle at 12% 8%, oklch(90% 0.07 10 / 0.3) 0%, transparent 16%), radial-gradient(circle at 85% 6%, oklch(89% 0.07 16 / 0.25) 0%, transparent 15%), radial-gradient(circle at 92% 45%, oklch(91% 0.06 8 / 0.22) 0%, transparent 15%), radial-gradient(circle at 6% 55%, oklch(90% 0.07 12 / 0.25) 0%, transparent 15%), radial-gradient(circle at 25% 95%, oklch(91% 0.06 14 / 0.22) 0%, transparent 16%), radial-gradient(circle at 78% 92%, oklch(89% 0.07 18 / 0.22) 0%, transparent 15%);">
+
+  <div style="position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden;">
+    <div style="position:absolute; top:6%; left:8%; width:64px; height:64px; opacity:0.5;">
+      <div style="position:absolute; inset:0; transform:rotate(0deg);"><div style="position:absolute; top:0; left:50%; width:22px; height:32px; margin-left:-11px; background:oklch(82% 0.1 10); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(72deg);"><div style="position:absolute; top:0; left:50%; width:22px; height:32px; margin-left:-11px; background:oklch(82% 0.1 10); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(144deg);"><div style="position:absolute; top:0; left:50%; width:22px; height:32px; margin-left:-11px; background:oklch(82% 0.1 10); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(216deg);"><div style="position:absolute; top:0; left:50%; width:22px; height:32px; margin-left:-11px; background:oklch(82% 0.1 10); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(288deg);"><div style="position:absolute; top:0; left:50%; width:22px; height:32px; margin-left:-11px; background:oklch(82% 0.1 10); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; top:50%; left:50%; width:11px; height:11px; margin:-5.5px 0 0 -5.5px; background:oklch(84% 0.12 70); border-radius:50%;"></div>
+    </div>
+
+    <div style="position:absolute; top:14%; right:10%; width:44px; height:44px; opacity:0.4; transform:rotate(20deg);">
+      <div style="position:absolute; inset:0; transform:rotate(0deg);"><div style="position:absolute; top:0; left:50%; width:15px; height:22px; margin-left:-7.5px; background:oklch(80% 0.1 12); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(72deg);"><div style="position:absolute; top:0; left:50%; width:15px; height:22px; margin-left:-7.5px; background:oklch(80% 0.1 12); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(144deg);"><div style="position:absolute; top:0; left:50%; width:15px; height:22px; margin-left:-7.5px; background:oklch(80% 0.1 12); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(216deg);"><div style="position:absolute; top:0; left:50%; width:15px; height:22px; margin-left:-7.5px; background:oklch(80% 0.1 12); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(288deg);"><div style="position:absolute; top:0; left:50%; width:15px; height:22px; margin-left:-7.5px; background:oklch(80% 0.1 12); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; top:50%; left:50%; width:8px; height:8px; margin:-4px 0 0 -4px; background:oklch(84% 0.12 70); border-radius:50%;"></div>
+    </div>
+
+    <div style="position:absolute; bottom:10%; left:5%; width:56px; height:56px; opacity:0.45; transform:rotate(-15deg);">
+      <div style="position:absolute; inset:0; transform:rotate(0deg);"><div style="position:absolute; top:0; left:50%; width:19px; height:28px; margin-left:-9.5px; background:oklch(81% 0.1 8); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(72deg);"><div style="position:absolute; top:0; left:50%; width:19px; height:28px; margin-left:-9.5px; background:oklch(81% 0.1 8); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(144deg);"><div style="position:absolute; top:0; left:50%; width:19px; height:28px; margin-left:-9.5px; background:oklch(81% 0.1 8); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(216deg);"><div style="position:absolute; top:0; left:50%; width:19px; height:28px; margin-left:-9.5px; background:oklch(81% 0.1 8); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(288deg);"><div style="position:absolute; top:0; left:50%; width:19px; height:28px; margin-left:-9.5px; background:oklch(81% 0.1 8); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; top:50%; left:50%; width:10px; height:10px; margin:-5px 0 0 -5px; background:oklch(84% 0.12 70); border-radius:50%;"></div>
+    </div>
+
+    <div style="position:absolute; bottom:8%; right:8%; width:40px; height:40px; opacity:0.4; transform:rotate(35deg);">
+      <div style="position:absolute; inset:0; transform:rotate(0deg);"><div style="position:absolute; top:0; left:50%; width:14px; height:20px; margin-left:-7px; background:oklch(80% 0.1 16); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(72deg);"><div style="position:absolute; top:0; left:50%; width:14px; height:20px; margin-left:-7px; background:oklch(80% 0.1 16); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(144deg);"><div style="position:absolute; top:0; left:50%; width:14px; height:20px; margin-left:-7px; background:oklch(80% 0.1 16); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(216deg);"><div style="position:absolute; top:0; left:50%; width:14px; height:20px; margin-left:-7px; background:oklch(80% 0.1 16); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; inset:0; transform:rotate(288deg);"><div style="position:absolute; top:0; left:50%; width:14px; height:20px; margin-left:-7px; background:oklch(80% 0.1 16); border-radius:50% 50% 50% 0;"></div></div>
+      <div style="position:absolute; top:50%; left:50%; width:7px; height:7px; margin:-3.5px 0 0 -3.5px; background:oklch(84% 0.12 70); border-radius:50%;"></div>
+    </div>
+  </div>
+
+  <div style="padding:clamp(28px,7vw,56px) clamp(20px,6vw,48px) clamp(18px,4vw,28px); text-align:center;">
+    <div style="font-family:'Shippori Mincho',serif; font-size:clamp(26px,6vw,42px); color:oklch(80% 0.09 10); line-height:1;">日本</div>
+    <h1 style="font-family:'Shippori Mincho',serif; font-weight:700; font-size:clamp(24px,5vw,38px); margin:10px 0 6px; letter-spacing:0.01em;">Road Trip Japon</h1>
+    <div style="font-size:14px; color:oklch(48% 0.01 80);">30 septembre → 7 novembre 2026 · Part.1 (2-21 oct.) puis Part.2 (dès le 21 oct., en cours de définition)</div>
+  </div>
+
+  <sc-if value="{{ checklist }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1000px; margin:0 auto; padding:14px clamp(16px,5vw,32px); background:oklch(96% 0.025 10); border-top:1px solid oklch(88% 0.05 10); border-bottom:1px solid oklch(88% 0.05 10);">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; flex-wrap:wrap;" onClick="{{ toggleChecklist }}">
+        <span style="font-size:13px; font-weight:600; color:oklch(40% 0.13 10);">{{ checklistCount }} étapes encore à confirmer</span>
+        <span style="font-size:12px; color:oklch(45% 0.13 10);">{{ checklistToggleLabel }}</span>
+      </div>
+      <sc-if value="{{ checklistOpen }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
+          <sc-for list="{{ checklist }}" as="item" hint-placeholder-count="3">
+            <a href="{{ item.href }}" style="font-size:12px; background:oklch(99% 0.005 80); border:1px solid oklch(85% 0.04 10); color:oklch(35% 0.01 80); padding:5px 10px; border-radius:100px; text-decoration:none;">{{ item.text }}</a>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <div id="map-section" style="max-width:1100px; margin:0 auto; padding:clamp(28px,6vw,48px) clamp(16px,5vw,32px) clamp(24px,5vw,40px); scroll-margin-top:12px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+      <h2 style="font-family:'Shippori Mincho',serif; font-size:clamp(18px,3vw,22px); margin:0;">地図 · Carte de l'itinéraire</h2>
+      <button onClick="{{ resetMap }}" style="border:1px solid oklch(85% 0.06 10); background:oklch(96% 0.03 10); color:oklch(45% 0.13 10); font-family:'Noto Sans JP',sans-serif; font-size:13px; font-weight:500; padding:9px 16px; border-radius:8px; cursor:pointer;">Voir tout l'itinéraire</button>
+    </div>
+    <div style="width:100%; aspect-ratio:4/3; max-height:70vh; border-radius:18px; overflow:hidden; border:1px solid oklch(90% 0.01 80); box-shadow:0 8px 28px oklch(20% 0.01 80 / 0.08);">
+      <iframe ref="{{ mapRef }}" src="./map.html" title="Carte du road trip" style="width:100%; height:100%; border:none; display:block;"></iframe>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:0 clamp(16px,5vw,32px) 80px;">
+    <sc-for list="{{ days }}" as="day" hint-placeholder-count="4">
+      <div id="day-{{ day.id }}" ref="{{ day.setRef }}" style="background:oklch(99% 0.004 80); border:1px solid oklch(91% 0.01 80); border-radius:18px; padding:clamp(20px,4vw,32px); margin-bottom:22px; scroll-margin-top:16px; opacity:{{ day.opacity }}; transform:{{ day.translateY }}; transition:opacity 0.7s ease, transform 0.7s ease;">
+        <image-slot id="{{ day.photoId }}" shape="rounded" radius="14" placeholder="Photo du jour" style="width:100%; aspect-ratio:16/7; margin-bottom:20px;"></image-slot>
+
+        <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:20px; flex-wrap:wrap;">
+          <div style="width:56px; height:56px; border-radius:14px; background:{{ day.color }}; display:flex; align-items:center; justify-content:center; flex:none;">
+            <span style="font-family:'Shippori Mincho',serif; font-weight:700; font-size:21px; color:oklch(99% 0.005 80); line-height:1;">{{ day.kanji }}</span>
+          </div>
+          <div style="flex:1 1 200px;">
+            <div style="font-size:13px; color:oklch(48% 0.01 80); letter-spacing:0.02em;">{{ day.id }} · {{ day.date }}</div>
+            <h3 style="font-family:'Shippori Mincho',serif; font-size:clamp(19px,3.5vw,23px); font-weight:700; margin:2px 0 0; line-height:1.3;">{{ day.title }}</h3>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:18px;">
+          <sc-for list="{{ day.stops }}" as="stop" hint-placeholder-count="3">
+            <div style="border-left:2px solid {{ day.color }}; padding-left:14px;">
+              <div style="font-weight:600; font-size:15px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span>{{ stop.icon }} {{ stop.name }}</span>
+                <sc-if value="{{ stop.tbd }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size:10.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; background:oklch(93% 0.05 10); color:oklch(48% 0.14 10); padding:2px 8px; border-radius:100px;">à définir</span>
+                </sc-if>
+              </div>
+              <sc-if value="{{ stop.address }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:13px; color:oklch(48% 0.01 80); margin-top:1px;"><a href="{{ stop.mapsUrl }}" target="_blank" rel="noopener">{{ stop.address }} ↗</a></div>
+              </sc-if>
+              <sc-if value="{{ stop.note }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:13px; color:oklch(35% 0.01 80); font-style:italic; margin-top:2px;">{{ stop.note }}</div>
+              </sc-if>
+              <sc-if value="{{ stop.legText }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:12.5px; color:oklch(50% 0.13 10); margin-top:2px;">{{ stop.legText }}</div>
+              </sc-if>
+              <sc-if value="{{ stop.info }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:12.5px; color:oklch(42% 0.01 80); margin-top:4px; line-height:1.5;">{{ stop.info }}</div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ day.sleep }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:13.5px; color:oklch(35% 0.01 80); background:oklch(95% 0.008 80); border-radius:8px; padding:8px 12px; margin-bottom:16px;">
+            <span>Nuit : <strong>{{ day.sleep.place }}</strong></span>
+            <sc-if value="{{ day.sleep.tbd }}" hint-placeholder-val="{{ false }}">
+              <span style="font-size:10.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; background:oklch(93% 0.05 10); color:oklch(48% 0.14 10); padding:2px 8px; border-radius:100px;">à réserver</span>
+            </sc-if>
+            <sc-if value="{{ day.sleep.note }}" hint-placeholder-val="{{ false }}">
+              <span style="color:oklch(48% 0.01 80);">— {{ day.sleep.note }}</span>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <a href="#map-section" onClick="{{ day.onFocus }}" style="display:inline-block; border:1px solid oklch(88% 0.01 80); background:none; color:oklch(35% 0.01 80); font-family:'Noto Sans JP',sans-serif; font-size:12.5px; padding:7px 14px; border-radius:8px; cursor:pointer; text-decoration:none;">Voir cette étape sur la carte</a>
+      </div>
+    </sc-for>
+
+    <div style="padding:20px 0 8px; text-align:center; font-size:13px; color:oklch(55% 0.01 80);">Le reste de la Part.2 sera ajouté au fil des décisions</div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+function slugify(s) {
+  return s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+class Component extends DCLogic {
+  state = { days: null, checklist: null, checklistOpen: true, visible: {} };
+
+  constructor(props) {
+    super(props);
+    this.mapRef = React.createRef();
+    this.dayEls = {};
+  }
+
+  registerDayRef(id, el) {
+    if (!el) return;
+    this.dayEls[id] = el;
+    el.dataset.dayId = id;
+    if (this.observer) this.observer.observe(el);
+  }
+
+  componentDidMount() {
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.dataset.dayId;
+          this.setState((s) => ({ visible: { ...s.visible, [id]: true } }));
+          this.observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    Object.values(this.dayEls).forEach((el) => this.observer.observe(el));
+    this.loadData();
+  }
+
+  loadData() {
+    import('./trip-data.js').then((m) => {
+      const days = m.days.map((d) => ({
+        ...d,
+        photoId: 'photo-' + d.id,
+        onFocus: () => this.focusDay(d.id),
+        setRef: (el) => this.registerDayRef(d.id, el),
+        stops: d.stops.map((s) => ({
+          ...s,
+          photoId: 'photo-' + slugify(d.id + '-' + s.name),
+          legText: s.leg ? `${s.leg.time}${s.leg.km ? ' · ' + s.leg.km + ' km' : ''} depuis l'étape précédente` : null,
+          icon: this.categoryIcon(s),
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(s.address || s.name),
+        })),
+      }));
+      const checklist = [];
+      days.forEach((d) => {
+        if (d.sleep && d.sleep.tbd) checklist.push({ text: `Logement à ${d.sleep.place} — à réserver`, href: '#day-' + d.id });
+        d.stops.forEach((s) => {
+          if (s.tbd && !s.isSleep) checklist.push({ text: s.name + ' — à définir', href: '#day-' + d.id });
+        });
+      });
+      this.setState({ days, checklist });
+    });
+  }
+
+  categoryIcon(s) {
+    const t = (s.name + ' ' + (s.note || '')).toLowerCase();
+    if (s.isSleep) return '🛏';
+    if (/mus[ée]e|museum|gallery|galerie/.test(t)) return '🏛';
+    if (/circuit|speedway|turnpike|suzuka|touge/.test(t)) return '🏁';
+    if (/parts|auto|autobacs|garage|tomei|studie|mine's|rental|car rental/.test(t)) return '🔧';
+    if (/observ|peak|pass|deck|point de vue|viewpoint/.test(t)) return '👁';
+    if (/lac|lake|beach|plage/.test(t)) return '🌊';
+    if (/dotonbori|marché|market/.test(t)) return '🍜';
+    return '📍';
+  }
+
+  toggleChecklist() {
+    this.setState((s) => ({ checklistOpen: !s.checklistOpen }));
+  }
+
+  focusDay(id) {
+    const win = this.mapRef.current && this.mapRef.current.contentWindow;
+    if (win) win.postMessage({ type: 'focusDay', dayId: id }, '*');
+  }
+
+  resetMap() {
+    const win = this.mapRef.current && this.mapRef.current.contentWindow;
+    if (win) win.postMessage({ type: 'reset' }, '*');
+  }
+
+  renderVals() {
+    const visible = this.state.visible;
+    if (this.state.days) {
+      this.state.days.forEach((d) => {
+        d.opacity = visible[d.id] ? 1 : 0;
+        d.translateY = visible[d.id] ? 'translateY(0)' : 'translateY(24px)';
+      });
+    }
+    return {
+      days: this.state.days,
+      mapRef: this.mapRef,
+      resetMap: () => this.resetMap(),
+      checklist: this.state.checklist,
+      checklistCount: this.state.checklist ? this.state.checklist.length : 0,
+      checklistOpen: this.state.checklistOpen,
+      checklistToggleLabel: this.state.checklistOpen ? 'Masquer ▲' : 'Afficher ▼',
+      toggleChecklist: () => this.toggleChecklist(),
+      visible: this.state.visible,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

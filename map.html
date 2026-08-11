@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carte du road trip</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: oklch(97% 0.006 80); font-family: 'Noto Sans JP', sans-serif; }
+  #map { width: 100%; height: 100%; }
+  .leaflet-control-attribution { font-size: 9.5px; }
+  .leaflet-popup-content-wrapper { border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.14); }
+  .leaflet-popup-tip { box-shadow: none; }
+  .stop-popup { font-size: 13px; line-height: 1.45; }
+  .stop-popup b { display: block; margin-bottom: 3px; font-size: 13.5px; }
+  .stop-popup .leg { color: oklch(50% 0.13 10); font-size: 12px; margin-top: 4px; }
+
+  #panel {
+    position: absolute; top: 14px; left: 14px; z-index: 500;
+    background: rgba(255,255,255,0.94); backdrop-filter: blur(6px);
+    border-radius: 14px; box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+    font-family: 'Noto Sans JP', sans-serif; overflow: hidden;
+    max-width: min(280px, calc(100vw - 28px));
+  }
+  #panel-toggle {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 11px 14px; cursor: pointer; font-size: 13px; font-weight: 600; color: oklch(30% 0.01 80);
+  }
+  #panel-toggle .chev { font-size: 11px; color: oklch(55% 0.01 80); transition: transform 0.2s ease; }
+  #panel.open #panel-toggle .chev { transform: rotate(180deg); }
+  #panel-list { max-height: 0; overflow-y: auto; transition: max-height 0.25s ease; border-top: 1px solid transparent; }
+  #panel.open #panel-list { max-height: 46vh; border-top-color: oklch(92% 0.01 80); }
+  .day-item {
+    display: flex; align-items: center; gap: 9px; padding: 8px 14px; font-size: 12.5px;
+    cursor: pointer; color: oklch(30% 0.01 80); transition: background 0.15s ease, opacity 0.15s ease;
+  }
+  .day-item:hover { background: oklch(96% 0.01 80); }
+  .day-item.active { background: oklch(95% 0.03 10); font-weight: 600; }
+  .day-item.dim { opacity: 0.4; }
+  .day-item .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+  #reset-btn {
+    position: absolute; top: 14px; right: 14px; z-index: 500;
+    background: rgba(255,255,255,0.94); border: none; border-radius: 10px; padding: 9px 14px;
+    font-family: 'Noto Sans JP', sans-serif; font-size: 12.5px; font-weight: 500; color: oklch(35% 0.01 80);
+    cursor: pointer; box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+  }
+  #reset-btn:hover { color: oklch(45% 0.13 10); }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="panel">
+  <div id="panel-toggle"><span id="panel-label">Tout l'itinéraire</span><span class="chev">▾</span></div>
+  <div id="panel-list"></div>
+</div>
+<button id="reset-btn" type="button">Vue d'ensemble</button>
+<script type="module">
+import { days } from './trip-data.js';
+
+const map = L.map('map', { zoomControl: true, attributionControl: true }).setView([35.4, 137.5], 6);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+  maxZoom: 18,
+  subdomains: 'abcd',
+}).addTo(map);
+
+const dayLayers = {};
+const panel = document.getElementById('panel');
+const panelToggle = document.getElementById('panel-toggle');
+const panelLabel = document.getElementById('panel-label');
+const panelList = document.getElementById('panel-list');
+let activeId = null;
+
+const PART2_IDS = ['J21', 'J25', 'J-nov1', 'J21-libre', 'J-retour'];
+days.forEach(day => {
+  if (day.id === 'J16-21' || PART2_IDS.includes(day.id)) return;
+  const stops = day.stops.filter(s => !s.noMap && s.lat >= 30);
+  if (!stops.length) return;
+  const pts = stops.map(s => [s.lat, s.lng]);
+  const line = L.polyline(pts, { color: day.color, weight: 4, opacity: 0.55, lineCap: 'round', lineJoin: 'round' }).addTo(map);
+  line.on('click', () => focusDay(day.id));
+  line.on('mouseover', () => line.setStyle({ opacity: 1 }));
+  line.on('mouseout', () => line.setStyle({ opacity: activeId === day.id ? 1 : (activeId ? 0.15 : 0.55) }));
+
+  const markers = stops.map((s) => {
+    const marker = L.circleMarker([s.lat, s.lng], {
+      radius: s.isSleep ? 6.5 : 4.5,
+      color: '#fff',
+      fillColor: day.color,
+      fillOpacity: 0.95,
+      weight: s.isSleep ? 2.5 : 1.5,
+    }).addTo(map);
+    const legTxt = s.leg ? `<div class="leg">${s.leg.time}${s.leg.km ? ' · ' + s.leg.km + ' km' : ''} depuis l'étape précédente</div>` : '';
+    marker.bindPopup(`<div class="stop-popup"><b>${day.id} — ${s.name}</b>${s.address ? s.address + '<br>' : ''}${s.note ? '<i>' + s.note + '</i>' : ''}${legTxt}</div>`);
+    marker.on('click', () => focusStop(day.id, s));
+    return marker;
+  });
+  const bounds = L.latLngBounds(pts);
+  dayLayers[day.id] = { line, markers, bounds };
+
+  const item = document.createElement('div');
+  item.className = 'day-item';
+  item.dataset.id = day.id;
+  item.innerHTML = `<span class="dot" style="background:${day.color}"></span><span>${day.id} — ${day.title}</span>`;
+  item.addEventListener('click', () => focusDay(day.id));
+  panelList.appendChild(item);
+});
+
+const overallBounds = L.latLngBounds(days.filter(d => d.id !== 'J16-21' && !PART2_IDS.includes(d.id)).flatMap(d => d.stops.filter(s => !s.noMap).map(s => [s.lat, s.lng])));
+map.flyToBounds(overallBounds, { padding: [30, 30], duration: 0.6 });
+
+const roadDays = days.filter(d => d.id !== 'J16-21' && !PART2_IDS.includes(d.id));
+for (let i = 0; i < roadDays.length - 1; i++) {
+  const fromStops = roadDays[i].stops.filter(s => !s.noMap);
+  const toStops = roadDays[i + 1].stops.filter(s => !s.noMap);
+  if (!fromStops.length || !toStops.length) continue;
+  const from = fromStops[fromStops.length - 1];
+  const to = toStops[0];
+  if (from.lat < 30 || to.lat < 30) continue;
+  L.polyline([[from.lat, from.lng], [to.lat, to.lng]], {
+    color: 'oklch(55% 0.01 80)',
+    weight: 2,
+    opacity: 0.5,
+    dashArray: '2 8',
+    lineCap: 'round',
+  }).addTo(map).bringToBack();
+}
+
+panelToggle.addEventListener('click', () => panel.classList.toggle('open'));
+
+function refreshPanelItems() {
+  [...panelList.children].forEach(el => {
+    el.classList.toggle('active', el.dataset.id === activeId);
+    el.classList.toggle('dim', !!activeId && el.dataset.id !== activeId);
+  });
+}
+
+function focusStop(dayId, stop) {
+  activeId = dayId;
+  Object.entries(dayLayers).forEach(([id, { line, markers }]) => {
+    const on = id === dayId;
+    line.setStyle({ opacity: on ? 1 : 0.15, weight: on ? 5 : 3 });
+    if (on) line.bringToFront();
+    markers.forEach(m => m.setStyle({ fillOpacity: on ? 1 : 0.35, radius: on ? (m.options.weight > 2 ? 7.5 : 5.5) : (m.options.weight > 2 ? 6.5 : 4.5) }));
+  });
+  const day = days.find(d => d.id === dayId);
+  panelLabel.textContent = day ? `${dayId} — ${stop.name}` : dayId;
+  panel.classList.add('open');
+  refreshPanelItems();
+  map.flyTo([stop.lat, stop.lng], 14, { duration: 0.7 });
+}
+
+function focusDay(id) {
+  activeId = id;
+  Object.entries(dayLayers).forEach(([dayId, { line, markers }]) => {
+    const on = dayId === id;
+    line.setStyle({ opacity: on ? 1 : 0.15, weight: on ? 5 : 3 });
+    if (on) line.bringToFront();
+    markers.forEach(m => m.setStyle({ fillOpacity: on ? 1 : 0.35, radius: on ? (m.options.weight > 2 ? 7.5 : 5.5) : (m.options.weight > 2 ? 6.5 : 4.5) }));
+  });
+  const target = dayLayers[id];
+  const day = days.find(d => d.id === id);
+  panelLabel.textContent = day ? `${id} — ${day.title}` : id;
+  panel.classList.add('open');
+  refreshPanelItems();
+  if (target) map.flyToBounds(target.bounds.isValid() ? target.bounds.pad(0.3) : overallBounds, { padding: [40, 40], maxZoom: 12, duration: 0.7 });
+}
+
+function resetView() {
+  activeId = null;
+  Object.values(dayLayers).forEach(({ line, markers }) => {
+    line.setStyle({ opacity: 0.55, weight: 4 });
+    markers.forEach(m => m.setStyle({ fillOpacity: 0.95, radius: m.options.weight > 2 ? 6.5 : 4.5 }));
+  });
+  panelLabel.textContent = "Tout l'itinéraire";
+  refreshPanelItems();
+  map.flyToBounds(overallBounds, { padding: [30, 30], duration: 0.6 });
+}
+
+document.getElementById('reset-btn').addEventListener('click', resetView);
+
+window.addEventListener('message', (e) => {
+  if (!e.data || !e.data.type) return;
+  if (e.data.type === 'focusDay') focusDay(e.data.dayId);
+  if (e.data.type === 'reset') resetView();
+});
+</script>
+</body>
+</html>
