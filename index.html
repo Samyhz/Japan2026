@@ -155,7 +155,7 @@
     .stop-badge.tbd { background: var(--sakura); color: var(--rose); border: 1px solid var(--sakura-2); }
     .stop-address { font-size: 13.5px; color: var(--ink-faint); margin-top: 3px; }
     .stop-address a { color: var(--ink-dim); }
-    .stop-note { font-family:'Cormorant Garamond',serif; font-style: italic; font-size: 16px; color: var(--ink-dim); margin-top: 3px; }
+    .stop-note { font-family:'Inter','Noto Sans JP',sans-serif; font-weight: 500; font-size: 15px; line-height: 1.5; color: var(--ink); margin-top: 4px; }
     .stop-leg { font-size: 12.5px; font-weight: 500; color: var(--accent-text); margin-top: 3px; letter-spacing: 0.01em; }
     .stop-info { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; line-height: 1.65; }
 
@@ -352,7 +352,7 @@
                 <span class="stop-badge tbd">à réserver</span>
               </sc-if>
               <sc-if value="{{ day.sleep.note }}" hint-placeholder-val="{{ false }}">
-                <span style="color:var(--ink-faint);">— {{ day.sleep.note }}</span>
+                <span style="color:var(--ink-dim);">— {{ day.sleep.note }}</span>
               </sc-if>
             </div>
           </sc-if>
