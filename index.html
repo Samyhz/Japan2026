@@ -461,17 +461,16 @@ class Component extends DCLogic {
         setRef: (el) => this.registerDayRef(d.id, el),
         stops: d.stops.map((s) => {
           const hasCoords = typeof s.lat === 'number' && typeof s.lng === 'number';
-          const coordPair = hasCoords ? `${s.lat},${s.lng}` : null;
-          const query = coordPair || (s.address || s.name);
+          const placeQuery = s.name + (s.address ? ', ' + s.address : '');
           return {
             ...s,
             photoId: 'photo-' + slugify(d.id + '-' + s.name),
             legText: s.leg ? `${s.leg.time}${s.leg.km ? ' · ' + s.leg.km + ' km' : ''} depuis l'étape précédente` : null,
             icon: this.categoryIcon(s),
-            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query),
+            mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(placeQuery),
             wazeUrl: hasCoords
-              ? `https://waze.com/ul?ll=${coordPair}&navigate=yes`
-              : 'https://waze.com/ul?q=' + encodeURIComponent(s.address || s.name),
+              ? `https://www.waze.com/ul?ll=${s.lat},${s.lng}&navigate=yes&zoom=17`
+              : 'https://www.waze.com/ul?q=' + encodeURIComponent(placeQuery),
             showNavLinks: !s.noMap,
           };
         }),
