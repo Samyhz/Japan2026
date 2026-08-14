@@ -209,6 +209,7 @@ export const days = [
       { name: "SURUGA-YA Akihabara Store", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Chaîne japonaise spécialisée dans les jeux vidéo, figurines et objets de collection d'occasion.", lat: 35.699, lng: 139.7717, tbd: true },
       { name: "Sofmap AKIBA Amusement Hall", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Salle d'arcade et de jeux d'occasion de l'enseigne Sofmap, à Akihabara.", lat: 35.6989, lng: 139.7716, tbd: true },
       { name: "Rassemblement de drift — derrière Nissui Logistics Tokyo Center", address: "Tokyo, Japon", note: "Jour à définir", info: "Point de rassemblement connu des amateurs de drift, à l'arrière du centre logistique Nissui à Tokyo.", lat: 35.62, lng: 139.79, tbd: true },
+      { name: "Yen Town Market", address: "Shibuya PARCO 5F, 15-1 Udagawacho, Shibuya, Tokyo 150-8377, Japon", note: "Jour à définir", info: "Boutique de streetwear et de collaborations mode installée au 5e étage du Shibuya PARCO.", lat: 35.6619, lng: 139.6987, tbd: true },
       { name: "Reste du programme", address: "Tokyo, Japon", note: "Journées restantes encore à répartir", lat: 35.6812, lng: 139.7671, tbd: true },
     ],
   },
