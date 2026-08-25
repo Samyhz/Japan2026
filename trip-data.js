@@ -135,6 +135,7 @@ export const days = [
     stops: [
       { name: "Lawson Fujikawaguchiko Town Hall", image: "https://commons.wikimedia.org/wiki/Special:FilePath/%E6%B2%B3%E5%8F%A3%E6%B9%96%E9%A7%85%E5%89%8D%E5%BA%97_%2854216860812%29.jpg?width=800", imageCredit: "Jeffrey Hayes — CC BY 2.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3A%E6%B2%B3%E5%8F%A3%E6%B9%96%E9%A7%85%E5%89%8D%E5%BA%97_%2854216860812%29.jpg", address: "Fujikawaguchiko, Yamanashi, Japon", note: "Photo devant le Lawson", info: "Ce Lawson est devenu un spot photo mondialement connu : le Mont Fuji semble surgir juste au-dessus du magasin.", lat: 35.487, lng: 138.769 },
       { name: "Lac Kawaguchi", image: "https://commons.wikimedia.org/wiki/Special:FilePath/KawaguchiKo.jpg?width=800", imageCredit: "BehBeh — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Lake_Kawaguchi", address: "Yamanashi, Japon", note: "Balade autour du lac", info: "L'un des cinq lacs de Fuji, le plus accessible depuis Tokyo, réputé pour ses vues du Mont Fuji se reflétant dans l'eau.", lat: 35.5, lng: 138.75, leg: { time: "10 minutes", km: 3 } },
+      { name: "Fujiyoshida Retro Shopping Street", address: "3 Chome-13 Shimoyoshida, Fujiyoshida, Yamanashi 403-0004, Japon", note: "Honcho Street — rue Showa rétro avec vue sur le Mont Fuji", info: "Ancienne rue commerçante de l'époque Edo (voie d'accès au Mont Fuji), célèbre pour sa perspective où le Fuji semble surgir au bout de la rue ; meilleure lumière tôt le matin.", lat: 35.4977, lng: 138.8035, leg: { time: "15 minutes", km: 5 } },
     ],
   },
   {
@@ -211,6 +212,7 @@ export const days = [
       { name: "Sofmap AKIBA Amusement Hall", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Salle d'arcade et de jeux d'occasion de l'enseigne Sofmap, à Akihabara.", lat: 35.6989, lng: 139.7716, tbd: true },
       { name: "Rassemblement de drift — derrière Nissui Logistics Tokyo Center", address: "Tokyo, Japon", note: "Jour à définir", info: "Point de rassemblement connu des amateurs de drift, à l'arrière du centre logistique Nissui à Tokyo.", lat: 35.62, lng: 139.79, tbd: true },
       { name: "Yen Town Market", address: "Shibuya PARCO 5F, 15-1 Udagawacho, Shibuya, Tokyo 150-8377, Japon", note: "Jour à définir", info: "Boutique de streetwear et de collaborations mode installée au 5e étage du Shibuya PARCO.", lat: 35.6619, lng: 139.6987, tbd: true },
+      { name: "Meiji Jingu Gaien", address: "1-1 Kasumigaoka-cho, Shinjuku, Tokyo, Japon", note: "Jour à définir", info: "Jardin extérieur du sanctuaire Meiji, célèbre pour son allée de 150 ginkgos entre l'avenue Aoyama et le musée Seitoku Kinen Kaigakan.", lat: 35.6788, lng: 139.7176, tbd: true },
       { name: "Reste du programme", address: "Tokyo, Japon", note: "Journées restantes encore à répartir", lat: 35.6812, lng: 139.7671, tbd: true },
     ],
   },
