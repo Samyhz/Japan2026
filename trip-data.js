@@ -182,8 +182,9 @@ export const days = [
     color: "oklch(55% 0.05 265)",
     sleep: { place: "Tokyo", tbd: true, note: "Logement à définir" },
     stops: [
-      { name: "Récupération d'un véhicule JDM", address: "Tokyo, Japon", note: "Le matin — loueur à confirmer", info: "Location d'un véhicule japonais pour la soirée de rassemblements autour de la baie de Tokyo.", lat: 35.6812, lng: 139.7671, tbd: true },
-      { name: "Daikoku PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Daikoku-PA.JPG?width=800", imageCredit: "Nyao148 — CC BY 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Daikoku_Parking_Area", address: "Yokohama, Kanagawa, Japon", note: "Le soir", info: "Aire de service artificielle sur la baie de Tokyo, connue mondialement comme lieu de rassemblement nocturne des amateurs de voitures japonaises.", lat: 35.4527, lng: 139.7597, leg: { time: "40 minutes", km: 30 } },
+      { name: "Récupération d'un véhicule JDM", address: "Tokyo, Japon", note: "Le matin — loueur à confirmer", info: "Location d'un véhicule japonais pour la journée et la soirée de rassemblements autour de la baie de Tokyo.", lat: 35.6812, lng: 139.7671, tbd: true },
+      { name: "Honjo Circuit", address: "883 Kodamachō Takayanagi, Honjo, Saitama 367-0224, Japon", note: "Événement confirmé ce jour-là (voir honjo-circuit.com/rents_schedule)", info: "Circuit d'environ 1 km près de Honjo, Saitama, ouvert aux particuliers et accueillant des événements grip, drift, gymkhana, moto et kart.", lat: 36.1711, lng: 139.1075, leg: { time: "1h20", km: 70 } },
+      { name: "Daikoku PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Daikoku-PA.JPG?width=800", imageCredit: "Nyao148 — CC BY 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Daikoku_Parking_Area", address: "Yokohama, Kanagawa, Japon", note: "Le soir", info: "Aire de service artificielle sur la baie de Tokyo, connue mondialement comme lieu de rassemblement nocturne des amateurs de voitures japonaises.", lat: 35.4527, lng: 139.7597, leg: { time: "1h40", km: 95 } },
       { name: "Umihotaru PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Umihotaru_Parking_Area_7.jpg?width=800", imageCredit: "Syced — CC0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AUmihotaru_Parking_Area_7.jpg", address: "Kisarazu, Chiba, Japon", note: "Le soir", info: "Aire de service posée au milieu de la baie de Tokyo, sur le tracé de l'Aqua-Line, avec vue sur le pont-tunnel et la baie.", lat: 35.464, lng: 139.877, leg: { time: "20 minutes", km: 19 } },
       { name: "Rassemblement de drift — derrière Nissui Logistics Tokyo Center", address: "Tokyo, Japon", note: "Le soir", info: "Point de rassemblement connu des amateurs de drift, à l'arrière du centre logistique Nissui à Tokyo.", lat: 35.62, lng: 139.79, leg: { time: "35 minutes", km: 28 } },
     ],
@@ -197,11 +198,91 @@ export const days = [
     ],
   },
   {
+    id: "J26", date: "Lundi 26 Octobre 2026", title: "Route d'Initial D — Ikaho & Mont Haruna", kanji: "伊香保",
+    color: "oklch(55% 0.05 300)",
+    sleep: { place: "Ikaho", tbd: true, note: "Hébergement à réserver" },
+    stops: [
+      { name: "Ikaho Toy, Doll and Car Museum", address: "2145 Kaminoda, Yoshioka, Kitagunma, Gunma 370-3606, Japon", info: "Musée insolite mêlant jouets anciens, poupées et voitures de collection, près d'Ikaho.", lat: 36.4474, lng: 139.0097 },
+      { name: "D'z Racing Cafe Garage", address: "3715-1 Shibukawa, Gunma 377-0008, Japon", info: "Café dédié aux passionnés de conduite et à Initial D, au pied du Mont Haruna ; point de rendez-vous classique avant d'attaquer les routes de Haruna et d'Ura-Haruna.", lat: 36.5294, lng: 138.9766, leg: { time: "15 minutes", km: 10 } },
+      { name: "Mont Haruna", address: "Takasaki, Gunma, Japon", note: "Route de montagne — base réelle du \"Mont Akina\" d'Initial D", info: "Route de montagne sinueuse autour du Mont Haruna, célèbre pour avoir inspiré le col d'Akina dans Initial D.", lat: 36.4195, lng: 138.9122, leg: { time: "20 minutes", km: 15 } },
+      { name: "Lac Haruna", address: "Takasaki, Gunma, Japon", info: "Lac de cratère à environ 1100 m d'altitude au sommet du Mont Haruna, entouré de sommets volcaniques.", lat: 36.4753, lng: 138.8659, leg: { time: "15 minutes", km: 7 } },
+      { name: "Haruna-jinja", address: "Takasaki, Gunma, Japon", note: "Optionnel", info: "Sanctuaire shinto niché dans les gorges boisées du Mont Haruna, connu pour ses formations rocheuses spectaculaires.", lat: 36.4584, lng: 138.8524, leg: { time: "10 minutes", km: 3 } },
+      { name: "Ikaho Onsen", address: "Shibukawa, Gunma, Japon", note: "Fin de journée — permet de prendre la route d'Initial D", info: "Station thermale de montagne connue pour son célèbre escalier central (Ishidan) bordé de sources chaudes et de boutiques.", lat: 36.4999, lng: 138.9259, leg: { time: "15 minutes", km: 7 }, isSleep: true },
+    ],
+  },
+  {
+    id: "J27", date: "Mardi 27 Octobre 2026", title: "Mont Akagi → Nikko", kanji: "日光",
+    color: "oklch(55% 0.05 310)",
+    sleep: { place: "Nikko", tbd: true, note: "Hébergement à réserver — nuits du 27 au 29 octobre" },
+    stops: [
+      { name: "Mount Akagi", address: "Maebashi, Gunma, Japon", note: "Route de montagne — autre décor emblématique d'Initial D", info: "Volcan bouclier culminant à 1828 m, avec la caldeira du lac Onuma ; ses routes en lacets sont un autre haut lieu du tuning et du drift japonais.", lat: 36.5552, lng: 139.1782, leg: { time: "40 minutes", km: 25 } },
+      { name: "Akagi Shrine", address: "Maebashi, Gunma, Japon", note: "Coordonnées approximatives à vérifier", info: "Sanctuaire shinto au bord du lac Onuma, sur les hauteurs du Mont Akagi.", lat: 36.556, lng: 139.192, leg: { time: "5 minutes", km: 1 } },
+      { name: "Visiter Nikko", address: "Nikko, Tochigi, Japon", note: "Arrivée dans l'après-midi/soirée", info: "Ville de montagne connue pour le sanctuaire Tōshō-gū classé à l'UNESCO et ses paysages de forêts et cascades.", lat: 36.7576, lng: 139.5991, leg: { time: "1h50", km: 90 } },
+    ],
+  },
+  {
+    id: "J28", date: "Mercredi 28 Octobre 2026", title: "Nikko Circuit", kanji: "日光",
+    color: "oklch(55% 0.05 320)",
+    sleep: { place: "Nikko", tbd: true, note: "Nuit 2 sur 3 à Nikko" },
+    stops: [
+      { name: "Nikko Circuit — événement", address: "Utsunomiya, Tochigi, Japon", note: "« ユタフェス祭 2026 » — nom/horaires à reconfirmer sur nikko-circuit.jp", info: "Circuit d'environ 1 km près de Nikko, qui accueille régulièrement des journées grip, drift, moto et kart tout au long de l'année.", lat: 36.6624, lng: 139.8626, leg: { time: "40 minutes", km: 25 } },
+    ],
+  },
+  {
+    id: "J29", date: "Jeudi 29 Octobre 2026", title: "Nikko", kanji: "日光",
+    color: "oklch(55% 0.05 330)",
+    sleep: { place: "Nikko", tbd: true, note: "Nuit 3 sur 3 à Nikko" },
+    stops: [
+      { name: "Visiter Nikko", address: "Nikko, Tochigi, Japon", note: "Activité à définir", info: "Journée libre à Nikko — temples, cascade Kegon, lac Chūzenji ou randonnée selon l'envie.", lat: 36.7576, lng: 139.5991, tbd: true },
+    ],
+  },
+  {
+    id: "J30", date: "Vendredi 30 Octobre 2026", title: "Nikko → Ōuchi-juku → Aizuwakamatsu", kanji: "会津",
+    color: "oklch(55% 0.05 340)",
+    sleep: { place: "Lac Inawashiro", tbd: true, note: "Hébergement à réserver" },
+    stops: [
+      { name: "Départ de Nikko", address: "Nikko, Tochigi, Japon", note: "Direction Ōuchi-juku", lat: 36.7576, lng: 139.5991 },
+      { name: "Ōuchi-juku", address: "Shimogo, Minamiaizu District, Fukushima, Japon", note: "", info: "Ancien village-étape de l'époque Edo sur la route Aizu-Nishi Kaidō, préservé avec ses maisons au toit de chaume.", lat: 37.3336, lng: 139.8607, leg: { time: "2h00", km: 85 } },
+      { name: "Château d'Aizuwakamatsu (Tsuruga-jō)", address: "Aizuwakamatsu, Fukushima, Japon", info: "Château historique reconstruit, symbole de la région d'Aizu et haut lieu de la guerre de Boshin.", lat: 37.4877, lng: 139.9298, leg: { time: "40 minutes", km: 25 } },
+      { name: "Dormir vers le Lac Inawashiro", address: "Inawashiro, Fukushima, Japon", lat: 37.4733, lng: 140.0989, leg: { time: "25 minutes", km: 15 }, isSleep: true },
+    ],
+  },
+  {
+    id: "J31", date: "Samedi 31 Octobre 2026", title: "Lac Inawashiro → Bandai-Azuma Skyline", kanji: "磐梯",
+    color: "oklch(55% 0.05 350)",
+    sleep: { place: "Fukushima", tbd: true, note: "Nuits du 31 octobre au 1er novembre" },
+    stops: [
+      { name: "Lac Inawashiro", address: "Inawashiro, Fukushima, Japon", info: "L'un des plus grands lacs du Japon, surnommé « le miroir du ciel », au pied du mont Bandai.", lat: 37.4733, lng: 140.0989 },
+      { name: "Bandai-Azuma Skyline — entrée ouest", address: "Tsuchiyu Onsen, Fukushima, Japon", info: "Extrémité ouest (côté Tsuchiyu) de la route panoramique du Bandai-Azuma Skyline.", lat: 37.6819, lng: 140.3265, leg: { time: "50 minutes", km: 35 } },
+      { name: "Umimi Pass", address: "Bandai-Azuma Skyline, Fukushima, Japon", note: "Nom/emplacement exact à reconfirmer", info: "Point de passage sur le Bandai-Azuma Skyline.", lat: 37.7, lng: 140.29, leg: { time: "15 minutes", km: 5 }, tbd: true },
+      { name: "Bandai-Azuma Skyline", address: "Fukushima, Japon", info: "Route à péage de 28,7 km à travers les montagnes volcaniques d'Azuma, entre paysages lunaires et forêts.", lat: 37.71, lng: 140.27, leg: { time: "10 minutes", km: 3 } },
+      { name: "Bandai-Azuma Skyline Observation Deck (Jōdodaira)", address: "Fukushima, Japon", info: "Point culminant accessible en voiture du Bandai-Azuma Skyline, à plus de 1600 m d'altitude, au pied du mont Azuma-Kofuji.", lat: 37.7234, lng: 140.2543, leg: { time: "10 minutes", km: 3 } },
+    ],
+  },
+  {
     id: "J-nov1", date: "Dimanche 1er Novembre 2026", title: "Ebisu Circuit", kanji: "福島",
     color: "oklch(55% 0.05 280)",
-    sleep: null,
+    sleep: { place: "Fukushima", tbd: true, note: "Nuits du 31 octobre au 1er novembre" },
     stops: [
       { name: "Ebisu Circuit — Rd.3 West Drift Course (200・280 class)", image: "https://commons.wikimedia.org/wiki/Special:FilePath/DSC_0005_ebisu_drifting.jpg?width=800", imageCredit: "Chad MacLean — CC BY 2.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ADSC_0005_ebisu_drifting.jpg", address: "Nihonmatsu, Fukushima, Japon", note: "Essais possibles la veille (sam. 31 oct.)", info: "Circuit spécialisé dans le drift, situé à Nihonmatsu (Fukushima), célèbre dans la scène drift japonaise.", lat: 37.548, lng: 140.472 },
+    ],
+  },
+  {
+    id: "J-nov2", date: "Lundi 2 Novembre 2026", title: "Fukushima → Honda Collection Hall (Motegi)", kanji: "栃木",
+    color: "oklch(55% 0.05 20)",
+    sleep: { place: "Narita", tbd: true, note: "Essayer de réserver l'International Garden Hotel Narita pour rendre la voiture le 3" },
+    stops: [
+      { name: "Départ de Fukushima", address: "Fukushima, Japon", lat: 37.7503, lng: 140.4676 },
+      { name: "Honda Collection Hall", address: "Motegi, Tochigi, Japon", info: "Musée Honda installé sur le site de Twin Ring Motegi, retraçant l'histoire des motos et voitures de la marque, y compris ses machines de compétition.", lat: 36.5266, lng: 140.2277, leg: { time: "2h00", km: 140 } },
+      { name: "International Garden Hotel Narita", address: "286-0133 Chiba, Narita, Yoshikura 241-1, Japon", note: "Sous réserve de disponibilité", lat: 35.7645, lng: 140.3606, leg: { time: "2h00", km: 130 }, isSleep: true, tbd: true },
+    ],
+  },
+  {
+    id: "J-nov3", date: "Mardi 3 Novembre 2026", title: "Restitution du véhicule → Tokyo", kanji: "返却",
+    color: "oklch(55% 0.05 30)",
+    sleep: { place: "Tokyo", tbd: true, note: "Reste du séjour avant le vol retour" },
+    stops: [
+      { name: "Restitution du véhicule", address: "Narita, Chiba, Japon", note: "Loueur à confirmer", lat: 35.7645, lng: 140.3606, tbd: true },
     ],
   },
   {
@@ -212,7 +293,6 @@ export const days = [
       { name: "Kabukicho", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kabukicho_red_gate_and_colorful_neon_street_signs_at_night%2C_Shinjuku%2C_Tokyo%2C_Japan.jpg?width=800", imageCredit: "Basile Morin — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AKabukicho_red_gate_and_colorful_neon_street_signs_at_night%2C_Shinjuku%2C_Tokyo%2C_Japan.jpg", address: "Shinjuku, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Quartier de divertissement nocturne de Shinjuku, réputé pour ses néons, ses restaurants et sa vie nocturne animée.", lat: 35.6939, lng: 139.7034, tbd: true },
       { name: "Sony Headquarters", address: "Minato, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Siège du groupe Sony, dans le quartier de Konan à Minato, Tokyo.", lat: 35.63, lng: 139.741, tbd: true },
       { name: "Ginza Sony Park", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sony_Building_Ginza_2009.jpg?width=800", imageCredit: "Wiiii — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Sony_Building_(Tokyo)", address: "Chuo, Tokyo, Japon", note: "Jour à définir", info: "Espace urbain et culturel de Sony à Ginza, avec expositions et installations rotatives sur le site de l'ancien Sony Building.", lat: 35.6716, lng: 139.7649, tbd: true },
-      { name: "Twin Ring Motegi", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Valentino_Rossi_2018_Motegi.jpg?width=800", imageCredit: "Takayuki Suzuki — CC BY-SA 2.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File:Valentino_Rossi_2018_Motegi.jpg",address: "Motegi, Tochigi, Japon", note: "Jour à définir", info: "Circuit automobile appartenant à Honda, comprenant un ovale et un tracé routier ; a accueilli le Grand Prix moto du Japon et des courses NASCAR.", lat: 36.5266, lng: 140.2277, tbd: true },
       { name: "Kojima Productions", address: "Shinagawa, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Studio de jeu vidéo fondé par Hideo Kojima après son départ de Konami, connu notamment pour la série Metal Gear Solid et Death Stranding.", lat: 35.617, lng: 139.73, tbd: true },
       { name: "Pokémon Center", address: "Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Boutique officielle Pokémon, avec produits dérivés, figurines et cartes exclusives.", lat: 35.6297, lng: 139.7736, tbd: true },
       { name: "Uniqlo Ginza", address: "Chuo, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Magasin phare mondial d'Uniqlo, dans le quartier commerçant chic de Ginza.", lat: 35.6712, lng: 139.7671, tbd: true },
