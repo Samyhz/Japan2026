@@ -216,7 +216,7 @@ export const days = [
     sleep: { place: "Nikko", tbd: true, note: "Hébergement à réserver — nuits du 27 au 29 octobre" },
     stops: [
       { name: "Mount Akagi", address: "Maebashi, Gunma, Japon", note: "Route de montagne — autre décor emblématique d'Initial D", info: "Volcan bouclier culminant à 1828 m, avec la caldeira du lac Onuma ; ses routes en lacets sont un autre haut lieu du tuning et du drift japonais.", lat: 36.5552, lng: 139.1782, leg: { time: "40 minutes", km: 25 } },
-      { name: "Akagi Shrine", address: "Maebashi, Gunma, Japon", note: "Coordonnées approximatives à vérifier", info: "Sanctuaire shinto au bord du lac Onuma, sur les hauteurs du Mont Akagi.", lat: 36.556, lng: 139.192, leg: { time: "5 minutes", km: 1 } },
+      { name: "Akagi Shrine", address: "4-2 Fujimimachi Akagisan, Maebashi, Gunma 371-0101, Japon", info: "Sanctuaire shinto au bord du lac Onuma, sur les hauteurs du Mont Akagi.", lat: 36.5526698, lng: 139.1834805, leg: { time: "5 minutes", km: 1 } },
       { name: "Visiter Nikko", address: "Nikko, Tochigi, Japon", note: "Arrivée dans l'après-midi/soirée", info: "Ville de montagne connue pour le sanctuaire Tōshō-gū classé à l'UNESCO et ses paysages de forêts et cascades.", lat: 36.7576, lng: 139.5991, leg: { time: "1h50", km: 90 } },
     ],
   },
@@ -225,7 +225,7 @@ export const days = [
     color: "oklch(55% 0.05 320)",
     sleep: { place: "Nikko", tbd: true, note: "Nuit 2 sur 3 à Nikko" },
     stops: [
-      { name: "Nikko Circuit — événement", address: "Utsunomiya, Tochigi, Japon", note: "« ユタフェス祭 2026 » — nom/horaires à reconfirmer sur nikko-circuit.jp", info: "Circuit d'environ 1 km près de Nikko, qui accueille régulièrement des journées grip, drift, moto et kart tout au long de l'année.", lat: 36.6624, lng: 139.8626, leg: { time: "40 minutes", km: 25 } },
+      { name: "Nikko Circuit — événement", address: "Utsunomiya, Tochigi, Japon", note: "« ユタフェス祭 2026 » confirmé au calendrier officiel du 28 octobre 2026", info: "Circuit d'environ 1 km près de Nikko, qui accueille régulièrement des journées grip, drift, moto et kart tout au long de l'année.", lat: 36.6624, lng: 139.8626, leg: { time: "40 minutes", km: 25 } },
     ],
   },
   {
@@ -254,7 +254,7 @@ export const days = [
     stops: [
       { name: "Lac Inawashiro", address: "Inawashiro, Fukushima, Japon", info: "L'un des plus grands lacs du Japon, surnommé « le miroir du ciel », au pied du mont Bandai.", lat: 37.4733, lng: 140.0989 },
       { name: "Bandai-Azuma Skyline — entrée ouest", address: "Tsuchiyu Onsen, Fukushima, Japon", info: "Extrémité ouest (côté Tsuchiyu) de la route panoramique du Bandai-Azuma Skyline.", lat: 37.6819, lng: 140.3265, leg: { time: "50 minutes", km: 35 } },
-      { name: "Umimi Pass", address: "Bandai-Azuma Skyline, Fukushima, Japon", note: "Nom/emplacement exact à reconfirmer", info: "Point de passage sur le Bandai-Azuma Skyline.", lat: 37.7, lng: 140.29, leg: { time: "15 minutes", km: 5 }, tbd: true },
+      { name: "Umimi Pass", address: "Wakamiya, Inawashiro, Yama District, Fukushima 969-2751, Japon", note: "Localisation au niveau du quartier (Wakamiya)", info: "Point de passage sur le Bandai-Azuma Skyline, côté lac Inawashiro.", lat: 37.677384, lng: 140.191793, leg: { time: "15 minutes", km: 5 } },
       { name: "Bandai-Azuma Skyline", address: "Fukushima, Japon", info: "Route à péage de 28,7 km à travers les montagnes volcaniques d'Azuma, entre paysages lunaires et forêts.", lat: 37.71, lng: 140.27, leg: { time: "10 minutes", km: 3 } },
       { name: "Bandai-Azuma Skyline Observation Deck (Jōdodaira)", address: "Fukushima, Japon", info: "Point culminant accessible en voiture du Bandai-Azuma Skyline, à plus de 1600 m d'altitude, au pied du mont Azuma-Kofuji.", lat: 37.7234, lng: 140.2543, leg: { time: "10 minutes", km: 3 } },
     ],
