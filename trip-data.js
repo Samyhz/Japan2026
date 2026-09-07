@@ -178,6 +178,17 @@ export const days = [
     ],
   },
   {
+    id: "J24", date: "Samedi 24 Octobre 2026", title: "Rassemblements nocturnes JDM", kanji: "夜",
+    color: "oklch(55% 0.05 265)",
+    sleep: { place: "Tokyo", tbd: true, note: "Logement à définir" },
+    stops: [
+      { name: "Récupération d'un véhicule JDM", address: "Tokyo, Japon", note: "Le matin — loueur à confirmer", info: "Location d'un véhicule japonais pour la soirée de rassemblements autour de la baie de Tokyo.", lat: 35.6812, lng: 139.7671, tbd: true },
+      { name: "Daikoku PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Daikoku-PA.JPG?width=800", imageCredit: "Nyao148 — CC BY 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Daikoku_Parking_Area", address: "Yokohama, Kanagawa, Japon", note: "Le soir", info: "Aire de service artificielle sur la baie de Tokyo, connue mondialement comme lieu de rassemblement nocturne des amateurs de voitures japonaises.", lat: 35.4527, lng: 139.7597, leg: { time: "40 minutes", km: 30 } },
+      { name: "Umihotaru PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Umihotaru_Parking_Area_7.jpg?width=800", imageCredit: "Syced — CC0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AUmihotaru_Parking_Area_7.jpg", address: "Kisarazu, Chiba, Japon", note: "Le soir", info: "Aire de service posée au milieu de la baie de Tokyo, sur le tracé de l'Aqua-Line, avec vue sur le pont-tunnel et la baie.", lat: 35.464, lng: 139.877, leg: { time: "20 minutes", km: 19 } },
+      { name: "Rassemblement de drift — derrière Nissui Logistics Tokyo Center", address: "Tokyo, Japon", note: "Le soir", info: "Point de rassemblement connu des amateurs de drift, à l'arrière du centre logistique Nissui à Tokyo.", lat: 35.62, lng: 139.79, leg: { time: "35 minutes", km: 28 } },
+    ],
+  },
+  {
     id: "J25", date: "Dimanche 25 Octobre 2026", title: "Tsukuba Circuit", kanji: "筑波",
     color: "oklch(55% 0.05 250)",
     sleep: null,
@@ -198,8 +209,6 @@ export const days = [
     color: "oklch(55% 0.02 20)",
     sleep: null,
     stops: [
-      { name: "Daikoku PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Daikoku-PA.JPG?width=800", imageCredit: "Nyao148 — CC BY 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Daikoku_Parking_Area", address: "Yokohama, Kanagawa, Japon", note: "Jour à définir", info: "Aire de service artificielle sur la baie de Tokyo, connue mondialement comme lieu de rassemblement nocturne des amateurs de voitures japonaises.", lat: 35.4527, lng: 139.7597, tbd: true },
-      { name: "Umihotaru PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Umihotaru_Parking_Area_7.jpg?width=800", imageCredit: "Syced — CC0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AUmihotaru_Parking_Area_7.jpg", address: "Kisarazu, Chiba, Japon", note: "Jour à définir", info: "Aire de service posée au milieu de la baie de Tokyo, sur le tracé de l'Aqua-Line, avec vue sur le pont-tunnel et la baie.", lat: 35.464, lng: 139.877, tbd: true },
       { name: "Kabukicho", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kabukicho_red_gate_and_colorful_neon_street_signs_at_night%2C_Shinjuku%2C_Tokyo%2C_Japan.jpg?width=800", imageCredit: "Basile Morin — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AKabukicho_red_gate_and_colorful_neon_street_signs_at_night%2C_Shinjuku%2C_Tokyo%2C_Japan.jpg", address: "Shinjuku, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Quartier de divertissement nocturne de Shinjuku, réputé pour ses néons, ses restaurants et sa vie nocturne animée.", lat: 35.6939, lng: 139.7034, tbd: true },
       { name: "Sony Headquarters", address: "Minato, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Siège du groupe Sony, dans le quartier de Konan à Minato, Tokyo.", lat: 35.63, lng: 139.741, tbd: true },
       { name: "Ginza Sony Park", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sony_Building_Ginza_2009.jpg?width=800", imageCredit: "Wiiii — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Sony_Building_(Tokyo)", address: "Chuo, Tokyo, Japon", note: "Jour à définir", info: "Espace urbain et culturel de Sony à Ginza, avec expositions et installations rotatives sur le site de l'ancien Sony Building.", lat: 35.6716, lng: 139.7649, tbd: true },
@@ -211,7 +220,6 @@ export const days = [
       { name: "Akihabara", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sotokanda%2C_Akihabara_Electric_Town_at_night_20231114.png?width=800", imageCredit: "Phineyes — CC0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ASotokanda%2C_Akihabara_Electric_Town_at_night_20231114.png", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Quartier emblématique de la culture geek et électronique de Tokyo, entre boutiques de manga, jeux vidéo et figurines.", lat: 35.6987, lng: 139.7714, tbd: true },
       { name: "SURUGA-YA Akihabara Store", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Chaîne japonaise spécialisée dans les jeux vidéo, figurines et objets de collection d'occasion.", lat: 35.699, lng: 139.7717, tbd: true },
       { name: "Sofmap AKIBA Amusement Hall", address: "Chiyoda, Tokyo, Japon", note: "Avec les autres — jour à définir", info: "Salle d'arcade et de jeux d'occasion de l'enseigne Sofmap, à Akihabara.", lat: 35.6989, lng: 139.7716, tbd: true },
-      { name: "Rassemblement de drift — derrière Nissui Logistics Tokyo Center", address: "Tokyo, Japon", note: "Jour à définir", info: "Point de rassemblement connu des amateurs de drift, à l'arrière du centre logistique Nissui à Tokyo.", lat: 35.62, lng: 139.79, tbd: true },
       { name: "Yen Town Market", address: "Shibuya PARCO 5F, 15-1 Udagawacho, Shibuya, Tokyo 150-8377, Japon", note: "Jour à définir", info: "Boutique de streetwear et de collaborations mode installée au 5e étage du Shibuya PARCO.", lat: 35.6619, lng: 139.6987, tbd: true },
       { name: "Meiji Jingu Gaien", address: "1-1 Kasumigaoka-cho, Shinjuku, Tokyo, Japon", note: "Jour à définir", info: "Jardin extérieur du sanctuaire Meiji, célèbre pour son allée de 150 ginkgos entre l'avenue Aoyama et le musée Seitoku Kinen Kaigakan.", lat: 35.6788, lng: 139.7176, tbd: true },
       { name: "Reste du programme", address: "Tokyo, Japon", note: "Journées restantes encore à répartir", lat: 35.6812, lng: 139.7671, tbd: true },
