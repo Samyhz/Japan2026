@@ -192,7 +192,7 @@ export const days = [
   {
     id: "J25", date: "Dimanche 25 Octobre 2026", title: "Tsukuba Circuit", kanji: "筑波",
     color: "oklch(55% 0.05 250)",
-    sleep: null,
+    sleep: { place: "Tokyo", tbd: true, note: "Logement à définir" },
     stops: [
       { name: "Tsukuba Circuit", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Tsukuba_Circuit.jpg?width=800", imageCredit: "なおっつ — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ATsukuba_Circuit.jpg", address: "Shimotsuma, Ibaraki, Japon", note: "Tsukuba Challenge Clubman Race Manche 4, Championnat Super FJ/FJ1500, Série Touring Car, Vitz Race in Tsukuba, Série VITA, JAF Circuit Trial, Super Kart, Finale GC Return, Tsukuba TC-2 Endurance 2h (finale) — entrée spectateur 2200¥, parking inclus", info: "Circuit historique de 2,045 km ouvert en 1970, à environ 60 km au nord de Tokyo ; accueille chaque semaine des courses, essais et journées de circuit.", lat: 36.1512, lng: 139.9212 },
     ],
