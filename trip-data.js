@@ -107,10 +107,10 @@ export const days = [
   {
     id: "J9", date: "Samedi 10 → Lundi 12 Octobre 2026", title: "Takayama & Shirakawa-go", kanji: "高山",
     color: "oklch(66% 0.17 260)",
-    sleep: { place: "Takayama puis Nakatsugawa", tbd: true, note: "Logé chez des amis à Takayama (10-12 oct.), adresse à définir — puis AB Hotel Nakatsugawa le 12 oct." },
+    sleep: { place: "Takayama puis Nakatsugawa", tbd: false, note: "Logé chez des amis à Takayama (10-12 oct.), 36°09'29.6\"N 137°14'32.0\"E — puis AB Hotel Nakatsugawa le 12 oct." },
     stops: [
       { name: "Départ vers Takayama", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Takayama%27s_Early_Winter_Welcome_%28NE%29.jpg?width=800", imageCredit: "Nickaura (Nick Sevarg) — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Takayama%2C_Gifu", address: "Gifu, Japon", info: "Vieille ville de montagne aux ruelles de l'époque d'Edo bien préservées, dans les Alpes japonaises.", lat: 36.1461, lng: 137.252 },
-      { name: "Logement chez des amis", address: "Takayama, Gifu, Japon", note: "Arrivée 10 oct., départ 12 oct. — adresse à définir", lat: 36.1461, lng: 137.252, isSleep: true },
+      { name: "Logement chez des amis", address: "Takayama, Gifu, Japon", note: "Arrivée 10 oct., départ 12 oct.", lat: 36.158222, lng: 137.242222, isSleep: true },
       { name: "Shirakawa-go", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ogi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg?width=800", imageCredit: "663highland — CC BY 2.5, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AOgi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg", address: "Gifu, Japon", note: "Aller-retour depuis Takayama le 11 octobre — se garer au Shirakawagō Seseragi Park Parking Lot", info: "Village inscrit au patrimoine mondial de l'UNESCO, connu pour ses fermes traditionnelles au toit de chaume gassho-zukuri.", lat: 36.258, lng: 136.906 },
       { name: "Nakatsugawa — AB Hotel Nakatsugawa", address: "258-1 Tegano, Nakatsugawa, Gifu 508-0015, Japon", note: "Arrivée 12 oct. 15h00-0h00, départ 13 oct. 10h00", lat: 35.497, lng: 137.493, isSleep: true },
     ],
