@@ -5,38 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Photos du jour — Road Trip Japon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Shippori+Mincho:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --washi: oklch(11% 0.006 30);
-    --washi-2: oklch(15% 0.01 30);
-    --ink: oklch(96% 0.006 75);
-    --ink-dim: oklch(76% 0.012 60);
-    --ink-faint: oklch(58% 0.014 50);
-    --line: oklch(100% 0 0 / 0.14);
-    --surface: oklch(100% 0 0 / 0.06);
-    --rose: oklch(57% 0.22 27);
-    --rose-soft: oklch(57% 0.22 27 / 0.18);
-    --kin: oklch(87% 0.19 105);
+    --washi: oklch(98% 0.006 75);
+    --washi-2: oklch(96% 0.016 30);
+    --sakura: oklch(90% 0.045 15);
+    --sakura-2: oklch(81% 0.08 10);
+    --rose: oklch(58% 0.15 8);
+    --rose-soft: oklch(58% 0.15 8 / 0.13);
+    --kin: oklch(68% 0.09 75);
+    --ink: oklch(24% 0.02 30);
+    --ink-dim: oklch(41% 0.024 30);
+    --ink-faint: oklch(49% 0.022 30);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: var(--washi); color: var(--ink); font-family: 'Inter', 'Noto Sans JP', sans-serif; }
   a { color: var(--rose); }
   .wrap { max-width: 760px; margin: 0 auto; padding: 20px 18px 60px; }
-  header.top { position: sticky; top: 0; z-index: 5; background: oklch(11% 0.006 30 / 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding: 14px 18px; display:flex; align-items:center; justify-content:space-between; gap: 10px; }
-  header.top .brand { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; }
+  header.top { position: sticky; top: 0; z-index: 5; background: var(--washi); border-bottom: 1px solid oklch(30% 0.02 30 / 0.1); padding: 14px 18px; display:flex; align-items:center; justify-content:space-between; gap: 10px; }
+  header.top .brand { font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 15px; }
   header.top .brand b { color: var(--rose); }
-  header.top a.back { font-size: 12.5px; font-weight: 700; text-decoration: none; color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.06em; }
-  h1 { font-family: 'Archivo', sans-serif; font-weight: 900; letter-spacing: -0.02em; font-size: clamp(26px, 6vw, 36px); margin: 22px 0 6px; }
+  header.top a.back { font-size: 12.5px; font-weight: 600; text-decoration: none; color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+  h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(26px, 6vw, 36px); margin: 22px 0 6px; }
   p.lead { color: var(--ink-dim); font-size: 14.5px; line-height: 1.5; margin: 0 0 22px; }
-  label { display:block; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-dim); margin-bottom: 6px; }
+  label { display:block; font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-dim); margin-bottom: 6px; }
   select {
     width: 100%; font-family: inherit; font-size: 15px; color: var(--ink);
-    padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
-    background: var(--washi-2); margin-bottom: 20px; appearance: none;
+    padding: 12px 14px; border-radius: 12px; border: 1px solid oklch(30% 0.02 30 / 0.2);
+    background: #fff; margin-bottom: 20px; appearance: none;
   }
   .dropzone {
-    border: 2px dashed var(--line); border-radius: 16px; padding: 28px 18px;
+    border: 2px dashed var(--sakura-2); border-radius: 16px; padding: 28px 18px;
     text-align: center; background: var(--washi-2); cursor: pointer; margin-bottom: 8px;
   }
   .dropzone:hover, .dropzone.drag { border-color: var(--rose); background: var(--rose-soft); }
@@ -45,27 +45,36 @@
   input[type=file] { display: none; }
   .status-list { margin: 14px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
   .status-list li { font-size: 13px; color: var(--ink-dim); display:flex; align-items:center; gap: 8px; }
-  .status-list li.ok { color: oklch(78% 0.24 142); }
-  .status-list li.err { color: oklch(70% 0.2 25); }
-  .spinner { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--line); border-top-color: var(--rose); animation: spin 0.7s linear infinite; flex: none; }
+  .status-list li.ok { color: oklch(55% 0.12 145); }
+  .status-list li.err { color: oklch(55% 0.15 25); }
+  .spinner { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--sakura-2); border-top-color: var(--rose); animation: spin 0.7s linear infinite; flex: none; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .gallery-head { display:flex; align-items:baseline; justify-content:space-between; margin: 34px 0 12px; }
-  .gallery-head h2 { font-family: 'Archivo', sans-serif; font-weight: 800; letter-spacing: -0.01em; font-size: 18px; margin: 0; }
+  .gallery-head h2 { font-family: 'Shippori Mincho', serif; font-size: 18px; margin: 0; }
   .gallery-head span { font-size: 12.5px; color: var(--ink-faint); }
   .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
-  .gallery figure { margin: 0; position: relative; border-radius: 10px; overflow: hidden; background: var(--washi-2); border: 1px solid var(--line); aspect-ratio: 1; }
+  .gallery figure { margin: 0; position: relative; border-radius: 10px; overflow: hidden; background: var(--washi-2); aspect-ratio: 1; }
   .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .gallery button.del {
     position: absolute; top: 4px; right: 4px; width: 22px; height: 22px; border-radius: 50%;
-    border: none; background: rgba(0,0,0,0.6); color: #fff; font-size: 12px; line-height: 1;
+    border: none; background: rgba(0,0,0,0.55); color: #fff; font-size: 12px; line-height: 1;
     cursor: pointer; display: flex; align-items: center; justify-content: center;
   }
   .empty { font-size: 13.5px; color: var(--ink-faint); font-style: italic; padding: 10px 2px; }
   .gate { max-width: 360px; margin: 80px auto; text-align: center; }
-  .gate input { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--washi-2); color: var(--ink); font-size: 15px; margin: 14px 0; font-family: inherit; }
-  .gate button { width: 100%; padding: 12px 14px; border-radius: 100px; border: none; background: var(--rose); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; }
-  .gate h1 { font-size: 20px; }
+  .gate input { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid oklch(30% 0.02 30 / 0.2); font-size: 15px; margin: 14px 0; font-family: inherit; }
+  .gate button { width: 100%; padding: 12px 14px; border-radius: 100px; border: none; background: var(--rose); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
   [hidden] { display: none !important; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --washi: oklch(20% 0.012 40);
+      --washi-2: oklch(25% 0.016 30);
+      --ink: oklch(92% 0.01 75);
+      --ink-dim: oklch(78% 0.014 60);
+      --ink-faint: oklch(65% 0.016 50);
+    }
+    select, .gate input { background: oklch(25% 0.016 30); color: var(--ink); border-color: oklch(80% 0.02 60 / 0.2); }
+  }
 </style>
 </head>
 <body>
