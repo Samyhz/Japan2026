@@ -239,12 +239,12 @@ export const days = [
   {
     id: "J30", date: "Vendredi 30 Octobre 2026", title: "Nikko → Ōuchi-juku → Aizuwakamatsu", kanji: "会津",
     color: "oklch(55% 0.05 340)",
-    sleep: { place: "Lac Inawashiro", tbd: true, note: "Hébergement à réserver" },
+    sleep: { place: "Lac Inawashiro", tbd: false, note: "Lake Side Hotel Minatoya — Nagahama 870, Inawashiro, Fukushima, Japon (arrivée 30 oct. 16h00-18h00, départ 31 oct. 10h00)" },
     stops: [
       { name: "Départ de Nikko", address: "Nikko, Tochigi, Japon", note: "Direction Ōuchi-juku", lat: 36.7576, lng: 139.5991 },
       { name: "Ōuchi-juku", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ouchijuku_2006-11-12.jpg?width=800", imageCredit: "Geomr — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AOuchijuku_2006-11-12.jpg", address: "Shimogo, Minamiaizu District, Fukushima, Japon", note: "", info: "Ancien village-étape de l'époque Edo sur la route Aizu-Nishi Kaidō, préservé avec ses maisons au toit de chaume.", lat: 37.3336, lng: 139.8607, leg: { time: "2h00", km: 85 } },
       { name: "Château d'Aizuwakamatsu (Tsuruga-jō)", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Fukushima-Sakura_in_Tsuruga_Castle%2C_Aizuwakamatsu_City-m.jpg?width=800", imageCredit: "SQZ — CC BY 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AFukushima-Sakura_in_Tsuruga_Castle%2C_Aizuwakamatsu_City-m.jpg", address: "Aizuwakamatsu, Fukushima, Japon", info: "Château historique reconstruit, symbole de la région d'Aizu et haut lieu de la guerre de Boshin.", lat: 37.4877, lng: 139.9298, leg: { time: "40 minutes", km: 25 } },
-      { name: "Dormir vers le Lac Inawashiro", address: "Inawashiro, Fukushima, Japon", lat: 37.4733, lng: 140.0989, leg: { time: "25 minutes", km: 15 }, isSleep: true },
+      { name: "Lake Side Hotel Minatoya", address: "Nagahama 870, Inawashiro, Fukushima, Japon", note: "Chambre lits jumeaux vue sur lac — arrivée 16h00-18h00, départ 31 oct. 10h00", lat: 37.5227, lng: 140.0464, leg: { time: "25 minutes", km: 15 }, isSleep: true },
     ],
   },
   {
