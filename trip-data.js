@@ -88,7 +88,7 @@ export const days = [
       { name: "Shubodai Lookout", address: "Satsukiyama, Ikeda, Osaka, Japon", note: "Sur la Satsukiyama Driveway", info: "Point de vue gratuit sur les hauteurs d'Ikeda, avec vue panoramique sur Osaka et l'aéroport d'Itami ; particulièrement beau au crépuscule.", lat: 34.8314, lng: 135.4258, leg: { time: "35 minutes", km: 29 } },
       { name: "East Rokko Observatory", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mt_rokko01s2816.jpg?width=800", imageCredit: "663highland — CC BY 2.5, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Mount_Rokk%C5%8D", address: "Kobe, Hyōgo, Japon", info: "Le Mont Rokkō domine Kobe et la baie d'Osaka ; sa vue nocturne compte parmi les trois plus belles du Japon.", lat: 34.755, lng: 135.265, leg: { time: "25 minutes", km: 18 } },
       { name: "Mt. Rokkō Tenran Observatory", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mt_rokko01s2816.jpg?width=800", imageCredit: "663highland — CC BY 2.5, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Mount_Rokk%C5%8D", address: "Kobe, Hyōgo, Japon", info: "Second point de vue du Mont Rokkō, avec panorama sur Kobe, Osaka et la mer intérieure de Seto.", lat: 34.769, lng: 135.245, leg: { time: "25 minutes", km: 10 } },
-      { name: "Higashi Osaka Parking Area (direction Wakayama)", address: "Osaka, Japon", note: "Si activité le soir", lat: 34.6, lng: 135.58, tbd: true },
+      { name: "Higashi Osaka Parking Area (direction Wakayama)", address: "Osaka, Japon", note: "Si activité le soir", lat: 34.6, lng: 135.58 },
       { name: "Dotonbori", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Osaka_Dotonbori_Ebisu_Bridge.jpg?width=800", imageCredit: "Type specimen — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/D%C5%8Dtonbori", address: "Osaka, Japon", note: "Le reste de la soirée pour manger", info: "Quartier animé le long du canal Dōtonbori, célèbre pour ses enseignes lumineuses (dont le panneau Glico) et sa street food.", lat: 34.6687, lng: 135.5013 },
       { name: "Nippombashi", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Nipponbashi_Osaka_Japan01-r.jpg?width=800", imageCredit: "Oilstreet — CC BY 2.5, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ANipponbashi_Osaka_Japan01-r.jpg", address: "Naniwa-ku, Osaka, Japon", note: "Quartier du logement (Toyoko Inn)", info: "Quartier d'Osaka surnommé le « Akihabara du Kansai », spécialisé dans l'électronique, le manga, l'anime et les jeux vidéo.", lat: 34.6624, lng: 135.5063, leg: { time: "10 minutes", km: 1 } },
       { name: "America Mura", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Amerikamura.jpg?width=800", imageCredit: "BradBeattie at English Wikipedia — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Amerikamura", address: "Osaka, Japon", info: "Quartier branché d'Osaka connu pour son mélange de mode vintage américaine, streetwear et graffitis, prisé de la jeunesse locale.", lat: 34.6717, lng: 135.4977, leg: { time: "10 minutes", km: 1 } },
@@ -337,14 +337,6 @@ export const days = [
       { name: "Sony Headquarters", address: "Minato, Tokyo, Japon", note: "Avec les autres", info: "Siège du groupe Sony, dans le quartier de Konan à Minato, Tokyo.", lat: 35.63, lng: 139.741, leg: { time: "20 minutes", km: 6.5 } },
       { name: "Pokémon Center", address: "Tokyo, Japon", note: "Avec les autres", info: "Boutique officielle Pokémon, avec produits dérivés, figurines et cartes exclusives.", lat: 35.6297, lng: 139.7736, leg: { time: "12 minutes", km: 3.5 } },
       { name: "Kojima Productions", address: "Shinagawa, Tokyo, Japon", note: "Avec les autres — le plus loin de l'hôtel", info: "Studio de jeu vidéo fondé par Hideo Kojima après son départ de Konami, connu notamment pour la série Metal Gear Solid et Death Stranding.", lat: 35.617, lng: 139.73, leg: { time: "15 minutes", km: 5 } },
-    ],
-  },
-  {
-    id: "J21-libre", date: "Jour à définir", title: "Activités encore à placer", kanji: "？",
-    color: "oklch(55% 0.02 20)",
-    sleep: null,
-    stops: [
-      { name: "Reste du programme", address: "Tokyo, Japon", note: "Journées restantes encore à répartir", lat: 35.6812, lng: 139.7671, tbd: true },
     ],
   },
   {
