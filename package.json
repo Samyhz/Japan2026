@@ -1,0 +1,26 @@
+{
+  "name": "japan2026",
+  "version": "1.0.0",
+  "description": "",
+  "main": "image-slot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samyhz/Japan2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samyhz/Japan2026/issues"
+  },
+  "homepage": "https://github.com/Samyhz/Japan2026#readme",
+  "dependencies": {
+    "@netlify/blobs": "^11.0.3"
+  },
+  "devDependencies": {
+    "netlify-cli": "^27.5.2"
+  }
+}
