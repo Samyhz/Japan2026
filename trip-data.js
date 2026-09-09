@@ -280,9 +280,10 @@ export const days = [
   {
     id: "J-nov3", date: "Mardi 3 Novembre 2026", title: "Restitution du véhicule → Tokyo", kanji: "返却",
     color: "oklch(55% 0.05 30)",
-    sleep: { place: "Tokyo", tbd: true, note: "Reste du séjour avant le vol retour" },
+    sleep: { place: "Otsuka, Tokyo", tbd: false, note: "APA Hotel Yamanote Otsuka Ekimae Tower — Minami Otsuka 3-31-10, Toshima-ku, Tokyo, Japon (arrivée 3 nov. 15h00, départ 6 nov. 10h00, dernier hôtel du séjour)" },
     stops: [
       { name: "Restitution de la Toyota GR86", address: "Narita, Chiba, Japon", note: "17h30 — réservation confirmée, loueur à proximité du HOTEL MYSTAYS PREMIER Narita", lat: 35.7847163, lng: 140.351622 },
+      { name: "APA Hotel Yamanote Otsuka Ekimae Tower", address: "Minami Otsuka 3-31-10, Toshima-ku, Tokyo, Japon", note: "Chambre simple standard — dernier hôtel du séjour, jusqu'au 6 novembre", lat: 35.7290603, lng: 139.7274953, leg: { time: "1h20", km: 65 }, isSleep: true },
     ],
   },
   {
