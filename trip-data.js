@@ -270,11 +270,11 @@ export const days = [
   {
     id: "J-nov2", date: "Lundi 2 Novembre 2026", title: "Fukushima → Honda Collection Hall (Motegi)", kanji: "栃木",
     color: "oklch(55% 0.05 20)",
-    sleep: { place: "Narita", tbd: true, note: "Essayer de réserver l'International Garden Hotel Narita pour rendre la voiture le 3" },
+    sleep: { place: "Narita", tbd: false, note: "HOTEL MYSTAYS PREMIER Narita — Oyama 31, Narita, Chiba, Japon (arrivée 2 nov. 15h00, départ 3 nov. 11h00)" },
     stops: [
       { name: "Départ de Fukushima", address: "Fukushima, Japon", lat: 37.7503, lng: 140.4676 },
       { name: "Honda Collection Hall", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Honda_Collection_Hall_2011.jpg?width=800", imageCredit: "Morio — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AHonda_Collection_Hall_2011.jpg", address: "Motegi, Tochigi, Japon", info: "Musée Honda installé sur le site de Twin Ring Motegi, retraçant l'histoire des motos et voitures de la marque, y compris ses machines de compétition.", lat: 36.5266, lng: 140.2277, leg: { time: "2h00", km: 140 } },
-      { name: "International Garden Hotel Narita", address: "286-0133 Chiba, Narita, Yoshikura 241-1, Japon", note: "Sous réserve de disponibilité", lat: 35.7645, lng: 140.3606, leg: { time: "2h00", km: 130 }, isSleep: true, tbd: true },
+      { name: "HOTEL MYSTAYS PREMIER Narita", address: "Oyama 31, Narita, Chiba 286-0131, Japon", note: "Chambre double confort — arrivée 15h00, départ 3 nov. 11h00", lat: 35.7847163, lng: 140.351622, leg: { time: "2h00", km: 130 }, isSleep: true },
     ],
   },
   {
