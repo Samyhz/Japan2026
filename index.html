@@ -13,6 +13,9 @@
   <script src="./image-slot.js"></script>
   <style>
     html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    :focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
 
     :root {
       --washi: oklch(98% 0.006 75);
@@ -51,6 +54,33 @@
     .nav-etapes { border:1px solid oklch(30% 0.02 30 / 0.22); background: transparent; color: var(--ink); font-family: 'Inter', 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 16px; border-radius: 100px; cursor: pointer; }
     .nav-etapes:hover { border-color: var(--rose); color: var(--rose); }
 
+    /* Sticky day-progress strip: quick chapter navigation for a long
+       single-page itinerary, shown once you've scrolled into it.
+       Independent plain HTML/JS (see the closing script block) so it
+       always works even if the CDN-loaded React pipeline above hiccups. */
+    .day-strip {
+      position: fixed; left: 0; right: 0; z-index: 30; top: var(--day-strip-top, 56px);
+      display: flex; align-items: center; gap: 6px;
+      background: oklch(98% 0.006 75 / 0.92);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid oklch(30% 0.02 30 / 0.08);
+      padding: 8px clamp(12px,3vw,28px);
+      overflow-x: auto; scrollbar-width: none;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    }
+    .day-strip::-webkit-scrollbar { display: none; }
+    .day-strip.visible { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+    .day-strip-item {
+      flex: none; appearance: none; border: 1px solid transparent; background: var(--washi-2);
+      color: var(--ink-faint); font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-size: 12px; font-weight: 600; padding: 6px 13px; border-radius: 100px; cursor: pointer;
+      white-space: nowrap;
+    }
+    .day-strip-item:hover { color: var(--ink); border-color: oklch(30% 0.02 30 / 0.2); }
+    .day-strip-item.current { background: var(--day-strip-accent, var(--rose)); color: #fff; }
+
     .hero {
       position: relative; overflow: hidden;
       background: radial-gradient(1100px 700px at 50% 4%, var(--sakura) 0%, var(--washi) 62%);
@@ -70,6 +100,11 @@
     .hero-title .l1 { display:block; font-size: clamp(46px,11vw,108px); letter-spacing: 0.02em; }
     .hero-title .l2 { display:block; font-size: clamp(46px,11vw,108px); color: var(--rose); margin-top: 4px; }
     .hero-tagline { max-width: 560px; margin: 26px auto 0; font-size: clamp(14px,1.8vw,16px); line-height: 1.7; color: var(--ink-dim); }
+
+    .hero-stats { position: relative; z-index: 2; display:flex; justify-content:center; gap: clamp(20px,5vw,48px); margin: 30px 0 0; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat-num { font-family:'Shippori Mincho',serif; font-size: clamp(22px,3.6vw,30px); color: var(--ink); font-variant-numeric: tabular-nums; }
+    .hero-stat-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-faint); margin-top: 2px; }
 
     .countdown-wrap { position: relative; z-index: 2; display:flex; justify-content:center; margin: 40px 0 8px; }
     .countdown { display:flex; gap: clamp(14px,4vw,34px); }
@@ -111,7 +146,7 @@
       --accent-text: color-mix(in oklch, var(--accent) 66%, black 32%);
       opacity: var(--vis-opacity); transform: var(--vis-transform);
       transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1);
-      scroll-margin-top: 60px;
+      scroll-margin-top: 104px;
     }
     .day-section.alt { background-color: var(--washi-2); }
     .day-waves {
@@ -285,6 +320,12 @@
         <span class="l2">日本</span>
       </h1>
       <p class="hero-tagline">Trente-huit jours de route à travers le Japon : garages JDM et légendes du tuning autour de Tokyo, cols de Hakone et Fuji Speedway, Alpes japonaises, Kansai, puis Okinawa et un second chapitre encore à écrire.</p>
+    </div>
+
+    <div class="hero-stats" id="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num" id="stat-days">—</div><div class="hero-stat-label">Étapes</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="stat-stops">—</div><div class="hero-stat-label">Arrêts</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="stat-km">—</div><div class="hero-stat-label">KM au compteur</div></div>
     </div>
 
     <div class="countdown-wrap">
@@ -477,9 +518,12 @@
 
 </x-dc>
 
-<!-- Mobile app-style navigation: bottom tab bar + quick day-jump sheet.
-     Plain static HTML/JS, deliberately outside the <x-dc> tree above so it
-     always works even if that CDN-loaded React pipeline has trouble. -->
+<!-- Mobile app-style navigation: bottom tab bar + quick day-jump sheet,
+     plus the sticky day-progress strip below. Plain static HTML/JS,
+     deliberately outside the <x-dc> tree above so it always works even if
+     that CDN-loaded React pipeline has trouble. -->
+<nav id="day-strip" class="day-strip sans" aria-label="Navigation rapide entre les étapes"></nav>
+
 <div id="jump-overlay" class="jump-overlay"></div>
 <div id="jump-sheet" class="jump-sheet" role="dialog" aria-label="Aller à une étape">
   <div class="jump-handle"></div>
@@ -516,7 +560,33 @@
   import('./trip-data.js').then((m) => {
     days = m.days.map((d, i) => ({ ...d, number: String(i + 1).padStart(2, '0') }));
     renderList(days);
+    renderHeroStats(days);
+    renderDayStrip(days);
   });
+
+  function renderHeroStats(items) {
+    const stopsTotal = items.reduce((sum, d) => sum + (d.stops ? d.stops.length : 0), 0);
+    const kmTotal = items.reduce((sum, d) => sum + (d.stops || []).reduce((s, st) => s + ((st.leg && st.leg.km) || 0), 0), 0);
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    set('stat-days', items.length);
+    set('stat-stops', stopsTotal);
+    set('stat-km', Math.round(kmTotal).toLocaleString('fr-FR') + '+');
+  }
+
+  const dayStrip = document.getElementById('day-strip');
+  function renderDayStrip(items) {
+    dayStrip.innerHTML = '';
+    for (const d of items) {
+      const btn = document.createElement('button');
+      btn.className = 'day-strip-item';
+      btn.dataset.dayId = d.id;
+      btn.style.setProperty('--day-strip-accent', d.color || '');
+      btn.textContent = d.number;
+      btn.title = d.title;
+      btn.addEventListener('click', () => goToDay(d.id));
+      dayStrip.appendChild(btn);
+    }
+  }
 
   function renderList(items) {
     list.innerHTML = '';
@@ -601,15 +671,49 @@
     });
   });
 
-  // Lightweight scroll-spy so the active tab reflects what's on screen.
+  // Lightweight scroll-spy so the active tab reflects what's on screen,
+  // and so the day-strip shows/hides and highlights the current day.
   const itineraireEl = () => document.getElementById('itineraire');
   const mapEl = () => document.getElementById('map-section');
+
+  function updateDayStripOffset() {
+    const navbar = document.querySelector('.navbar');
+    const h = navbar ? navbar.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--day-strip-top', h + 'px');
+  }
+  window.addEventListener('resize', updateDayStripOffset, { passive: true });
+  updateDayStripOffset();
+  window.setTimeout(updateDayStripOffset, 800); // after webfonts settle navbar height
+
+  function updateDayStrip() {
+    const iEl = itineraireEl();
+    const inItinerary = iEl && iEl.getBoundingClientRect().top < window.innerHeight * 0.5 &&
+      iEl.getBoundingClientRect().bottom > 0;
+    dayStrip.classList.toggle('visible', !!inItinerary);
+    if (!inItinerary) return;
+
+    const viewportMid = window.innerHeight * 0.35;
+    let current = null;
+    for (const d of days) {
+      const el = document.getElementById('day-' + d.id);
+      if (!el) continue;
+      if (el.getBoundingClientRect().top <= viewportMid) current = d.id;
+    }
+    if (current == null) return;
+    dayStrip.querySelectorAll('.day-strip-item').forEach((btn) => {
+      const isCurrent = btn.dataset.dayId === current;
+      btn.classList.toggle('current', isCurrent);
+      if (isCurrent) btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+  }
+
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (ticking) return;
     ticking = true;
     window.requestAnimationFrame(() => {
       ticking = false;
+      updateDayStrip();
       if (sheet.classList.contains('open')) return;
       const mEl = mapEl();
       const iEl = itineraireEl();
