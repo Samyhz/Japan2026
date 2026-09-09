@@ -200,7 +200,7 @@ export const days = [
   {
     id: "J26", date: "Lundi 26 Octobre 2026", title: "Route d'Initial D — Ikaho & Mont Haruna", kanji: "伊香保",
     color: "oklch(55% 0.05 300)",
-    sleep: { place: "Ikaho", tbd: true, note: "Hébergement à réserver" },
+    sleep: { place: "Ikaho", tbd: false, note: "Mimatsukan — Ikaho-machi Ikaho 131, Shibukawa, Gunma, Japon (arrivée 26 oct. 15h00-19h00, départ 27 oct. 10h00)" },
     stops: [
       { name: "Ikaho Toy, Doll and Car Museum", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ikaho_Toy%2C_Doll_%26_Car_Museum.jpg?width=800", imageCredit: "Qurren — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AIkaho_Toy%2C_Doll_%26_Car_Museum.jpg", address: "2145 Kaminoda, Yoshioka, Kitagunma, Gunma 370-3606, Japon", info: "Musée insolite mêlant jouets anciens, poupées et voitures de collection, près d'Ikaho.", lat: 36.4474, lng: 139.0097 },
       { name: "D'z Racing Cafe Garage", address: "3715-1 Shibukawa, Gunma 377-0008, Japon", info: "Café dédié aux passionnés de conduite et à Initial D, au pied du Mont Haruna ; point de rendez-vous classique avant d'attaquer les routes de Haruna et d'Ura-Haruna.", lat: 36.5294, lng: 138.9766, leg: { time: "15 minutes", km: 10 } },
