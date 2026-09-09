@@ -250,7 +250,7 @@ export const days = [
   {
     id: "J31", date: "Samedi 31 Octobre 2026", title: "Lac Inawashiro → Bandai-Azuma Skyline", kanji: "磐梯",
     color: "oklch(55% 0.05 350)",
-    sleep: { place: "Fukushima", tbd: true, note: "Nuits du 31 octobre au 1er novembre" },
+    sleep: { place: "Fukushima", tbd: false, note: "Hotel Route Inn Grand Fukushima Ekimae Higashiguchi — 3-21 Sakaemachi, Fukushima, Japon (arrivée 31 oct. 15h00, départ 2 nov. 10h00, 2 nuits)" },
     stops: [
       { name: "Lac Inawashiro", image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Lake_Inawashiro_1.JPG", imageCredit: "Brian Adler — Domaine public, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ALake_Inawashiro_1.JPG", address: "Inawashiro, Fukushima, Japon", info: "L'un des plus grands lacs du Japon, surnommé « le miroir du ciel », au pied du mont Bandai.", lat: 37.4733, lng: 140.0989 },
       { name: "Bandai-Azuma Skyline — entrée ouest", address: "Tsuchiyu Onsen, Fukushima, Japon", info: "Extrémité ouest (côté Tsuchiyu) de la route panoramique du Bandai-Azuma Skyline.", lat: 37.6819, lng: 140.3265, leg: { time: "50 minutes", km: 35 } },
@@ -262,7 +262,7 @@ export const days = [
   {
     id: "J-nov1", date: "Dimanche 1er Novembre 2026", title: "Ebisu Circuit", kanji: "福島",
     color: "oklch(55% 0.05 280)",
-    sleep: { place: "Fukushima", tbd: true, note: "Nuits du 31 octobre au 1er novembre" },
+    sleep: { place: "Fukushima", tbd: false, note: "Hotel Route Inn Grand Fukushima Ekimae Higashiguchi — 3-21 Sakaemachi, Fukushima, Japon (arrivée 31 oct. 15h00, départ 2 nov. 10h00, 2 nuits)" },
     stops: [
       { name: "Ebisu Circuit — Rd.3 West Drift Course (200・280 class)", image: "https://commons.wikimedia.org/wiki/Special:FilePath/DSC_0005_ebisu_drifting.jpg?width=800", imageCredit: "Chad MacLean — CC BY 2.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ADSC_0005_ebisu_drifting.jpg", address: "Nihonmatsu, Fukushima, Japon", note: "Essais possibles la veille (sam. 31 oct.)", info: "Circuit spécialisé dans le drift, situé à Nihonmatsu (Fukushima), célèbre dans la scène drift japonaise.", lat: 37.548, lng: 140.472 },
     ],
