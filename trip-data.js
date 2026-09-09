@@ -182,7 +182,7 @@ export const days = [
     color: "oklch(55% 0.05 265)",
     sleep: { place: "Tokyo", tbd: true, note: "Logement à définir" },
     stops: [
-      { name: "Récupération d'un véhicule JDM", address: "Tokyo, Japon", note: "Le matin — loueur à confirmer", info: "Location d'un véhicule japonais pour la journée et la soirée de rassemblements autour de la baie de Tokyo.", lat: 35.6812, lng: 139.7671, tbd: true },
+      { name: "Récupération de la Toyota GR86", address: "Tokyo, Japon", note: "9h30 — réservation confirmée", info: "Location de la même Toyota GR86 pour la partie 2 du road trip, du 24 octobre 9h30 au 3 novembre 17h30.", lat: 35.6812, lng: 139.7671 },
       { name: "Honjo Circuit", address: "883 Kodamachō Takayanagi, Honjo, Saitama 367-0224, Japon", note: "Événement confirmé ce jour-là (voir honjo-circuit.com/rents_schedule)", info: "Circuit d'environ 1 km près de Honjo, Saitama, ouvert aux particuliers et accueillant des événements grip, drift, gymkhana, moto et kart.", lat: 36.1711, lng: 139.1075, leg: { time: "1h20", km: 70 } },
       { name: "Daikoku PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Daikoku-PA.JPG?width=800", imageCredit: "Nyao148 — CC BY 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Daikoku_Parking_Area", address: "Yokohama, Kanagawa, Japon", note: "Le soir", info: "Aire de service artificielle sur la baie de Tokyo, connue mondialement comme lieu de rassemblement nocturne des amateurs de voitures japonaises.", lat: 35.4527, lng: 139.7597, leg: { time: "1h40", km: 95 } },
       { name: "Umihotaru PA", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Umihotaru_Parking_Area_7.jpg?width=800", imageCredit: "Syced — CC0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AUmihotaru_Parking_Area_7.jpg", address: "Kisarazu, Chiba, Japon", note: "Le soir", info: "Aire de service posée au milieu de la baie de Tokyo, sur le tracé de l'Aqua-Line, avec vue sur le pont-tunnel et la baie.", lat: 35.464, lng: 139.877, leg: { time: "20 minutes", km: 19 } },
@@ -282,7 +282,7 @@ export const days = [
     color: "oklch(55% 0.05 30)",
     sleep: { place: "Tokyo", tbd: true, note: "Reste du séjour avant le vol retour" },
     stops: [
-      { name: "Restitution du véhicule", address: "Narita, Chiba, Japon", note: "Loueur à confirmer", lat: 35.7645, lng: 140.3606, tbd: true },
+      { name: "Restitution de la Toyota GR86", address: "Narita, Chiba, Japon", note: "17h30 — réservation confirmée", lat: 35.7645, lng: 140.3606 },
     ],
   },
   {
