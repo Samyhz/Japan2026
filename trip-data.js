@@ -172,7 +172,7 @@ export const days = [
     color: "oklch(55% 0.02 20)",
     id: "J21", date: "Mercredi 21 Octobre 2026", title: "Retour à Tokyo", kanji: "帰",
     color: "oklch(55% 0.02 20)",
-    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "HOTEL MYSTAYS Higashi Ikebukuro — 4-chōme Higashi-Ikebukuro, Toshima-ku, Tokyo 170-0013, Japon (nuits du 21 au 25 octobre)" },
+    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "HOTEL MYSTAYS Higashi Ikebukuro — Higashi Ikebukuro 4-39-13, Toshima-ku, Tokyo, Japon (arrivée 21 oct. 15h00, départ 25 oct. 11h00)" },
     stops: [
       { name: "Vol Naha (OKA) → Tokyo (NRT)", address: "Aéroport de Naha, Okinawa, Japon", note: "Peach Aviation MM504 — 12h15 → 14h55 (2h40, vol direct, classe économique)", lat: 26.1958, lng: 127.6458 },
     ],
@@ -180,7 +180,7 @@ export const days = [
   {
     id: "J24", date: "Samedi 24 Octobre 2026", title: "Rassemblements nocturnes JDM", kanji: "夜",
     color: "oklch(55% 0.05 265)",
-    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "HOTEL MYSTAYS Higashi Ikebukuro — nuits du 21 au 25 octobre" },
+    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "HOTEL MYSTAYS Higashi Ikebukuro — Higashi Ikebukuro 4-39-13, Toshima-ku, Tokyo (arrivée 21 oct. 15h00, départ 25 oct. 11h00)" },
     stops: [
       { name: "Récupération de la Toyota GR86", address: "Tokyo, Japon", note: "9h30 — réservation confirmée", info: "Location de la même Toyota GR86 pour la partie 2 du road trip, du 24 octobre 9h30 au 3 novembre 17h30.", lat: 35.6812, lng: 139.7671 },
       { name: "Honjo Circuit", address: "883 Kodamachō Takayanagi, Honjo, Saitama 367-0224, Japon", note: "Événement confirmé ce jour-là (voir honjo-circuit.com/rents_schedule)", info: "Circuit d'environ 1 km près de Honjo, Saitama, ouvert aux particuliers et accueillant des événements grip, drift, gymkhana, moto et kart.", lat: 36.1711, lng: 139.1075, leg: { time: "1h20", km: 70 } },
