@@ -213,7 +213,7 @@ export const days = [
   {
     id: "J27", date: "Mardi 27 Octobre 2026", title: "Mont Akagi → Nikko", kanji: "日光",
     color: "oklch(55% 0.05 310)",
-    sleep: { place: "Nikko", tbd: true, note: "Hébergement à réserver — nuits du 27 au 29 octobre" },
+    sleep: { place: "Nikko", tbd: false, note: "日光ゲストハウス — 2054-7 Tsuchizawa, Nikko, Tochigi, Japon (arrivée 27 oct. 15h00-23h00, départ 30 oct. 6h00-10h00, 3 nuits)" },
     stops: [
       { name: "Mount Akagi", image: "https://commons.wikimedia.org/wiki/Special:FilePath/MountAkagi.jpg?width=800", imageCredit: "Javbw — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AMountAkagi.jpg", address: "Maebashi, Gunma, Japon", note: "Route de montagne — autre décor emblématique d'Initial D", info: "Volcan bouclier culminant à 1828 m, avec la caldeira du lac Onuma ; ses routes en lacets sont un autre haut lieu du tuning et du drift japonais.", lat: 36.5552, lng: 139.1782, leg: { time: "40 minutes", km: 25 } },
       { name: "Akagi Shrine", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Akagi_Shrine_%40_Lake_Onuma_%40_Trail_from_Mount_Kurobi_to_Lake_Onuma_%40_Mount_Akagi_area_%2814181943776%29.jpg?width=800", imageCredit: "Guilhem Vellut — CC BY 2.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AAkagi_Shrine_%40_Lake_Onuma_%40_Trail_from_Mount_Kurobi_to_Lake_Onuma_%40_Mount_Akagi_area_%2814181943776%29.jpg", address: "4-2 Fujimimachi Akagisan, Maebashi, Gunma 371-0101, Japon", info: "Sanctuaire shinto au bord du lac Onuma, sur les hauteurs du Mont Akagi.", lat: 36.5526698, lng: 139.1834805, leg: { time: "5 minutes", km: 1 } },
@@ -223,7 +223,7 @@ export const days = [
   {
     id: "J28", date: "Mercredi 28 Octobre 2026", title: "Nikko Circuit", kanji: "日光",
     color: "oklch(55% 0.05 320)",
-    sleep: { place: "Nikko", tbd: true, note: "Nuit 2 sur 3 à Nikko" },
+    sleep: { place: "Nikko", tbd: false, note: "日光ゲストハウス — nuit 2 sur 3" },
     stops: [
       { name: "Nikko Circuit — événement", address: "Utsunomiya, Tochigi, Japon", note: "« ユタフェス祭 2026 » confirmé au calendrier officiel du 28 octobre 2026", info: "Circuit d'environ 1 km près de Nikko, qui accueille régulièrement des journées grip, drift, moto et kart tout au long de l'année.", lat: 36.6624, lng: 139.8626, leg: { time: "40 minutes", km: 25 } },
     ],
@@ -231,7 +231,7 @@ export const days = [
   {
     id: "J29", date: "Jeudi 29 Octobre 2026", title: "Nikko", kanji: "日光",
     color: "oklch(55% 0.05 330)",
-    sleep: { place: "Nikko", tbd: true, note: "Nuit 3 sur 3 à Nikko" },
+    sleep: { place: "Nikko", tbd: false, note: "日光ゲストハウス — nuit 3 sur 3, départ 30 oct. entre 6h00 et 10h00" },
     stops: [
       { name: "Visiter Nikko", image: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Three_Wise_Monkeys%2C_Nikk%C5%8D_T%C5%8Dsh%C5%8D-g%C5%AB%3B_April_2018.jpg?width=800", imageCredit: "Ray in Manila — CC BY 2.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AThe_Three_Wise_Monkeys%2C_Nikk%C5%8D_T%C5%8Dsh%C5%8D-g%C5%AB%3B_April_2018.jpg", address: "Nikko, Tochigi, Japon", note: "Activité à définir", info: "Journée libre à Nikko — temples, cascade Kegon, lac Chūzenji ou randonnée selon l'envie.", lat: 36.7576, lng: 139.5991, tbd: true },
     ],
