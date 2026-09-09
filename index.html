@@ -541,5 +541,67 @@ class Component extends DCLogic {
 }
 
 </script>
+<script type="module">
+  // Progressive enhancement, independent of the dc-runtime/React tree above:
+  // if a day has photos uploaded via photos.html (Netlify Blobs backend),
+  // show the most recent one in that day's "Photo du jour" slot instead of
+  // the empty placeholder. Silently does nothing where the backend isn't
+  // available (e.g. this GitHub Pages "recette" copy has no functions).
+  //
+  // The countdown timer re-renders the whole day list every second, which
+  // can recreate these <image-slot> DOM nodes — so results are cached per
+  // day and reapplied on every sighting instead of being fetched once and
+  // left to whatever attribute survives the next render.
+  const FN = './.netlify/functions';
+  const photoCache = new Map(); // day -> src url, or null once confirmed empty
+  const pending = new Set();
+
+  function applyFromCache(slot, day) {
+    const src = photoCache.get(day);
+    if (src) slot.setAttribute('src', src);
+  }
+
+  async function fillSlot(slot) {
+    const id = slot.id || '';
+    if (!id.startsWith('photo-')) return;
+    const day = id.slice('photo-'.length);
+
+    if (photoCache.has(day)) {
+      applyFromCache(slot, day);
+      return;
+    }
+    if (pending.has(day)) return;
+    pending.add(day);
+
+    try {
+      const res = await fetch(`${FN}/list-photos?day=${encodeURIComponent(day)}`);
+      if (!res.ok) { photoCache.set(day, null); return; }
+      const { items } = await res.json();
+      const latest = items && items.length ? items[items.length - 1] : null;
+      photoCache.set(day, latest ? `${FN}/get-photo?key=${encodeURIComponent(latest.key)}` : null);
+      applyFromCache(slot, day);
+    } catch {
+      photoCache.set(day, null);
+    } finally {
+      pending.delete(day);
+    }
+  }
+
+  function scan(root) {
+    root.querySelectorAll('image-slot[id^="photo-"]').forEach(fillSlot);
+  }
+
+  scan(document);
+  const observer = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      m.addedNodes.forEach((node) => {
+        if (node.nodeType !== 1) return;
+        if (node.matches && node.matches('image-slot[id^="photo-"]')) fillSlot(node);
+        if (node.querySelectorAll) scan(node);
+      });
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+</script>
 </body>
 </html>
