@@ -169,8 +169,6 @@ export const days = [
     ],
   },
   {
-    id: "J21+", date: "Mercredi 21 Octobre → Vendredi 6 Novembre 2026", title: "Part.2 — Tokyo & environs", kanji: "二",
-    color: "oklch(55% 0.02 20)",
     id: "J21", date: "Mercredi 21 Octobre 2026", title: "Retour à Tokyo", kanji: "帰",
     color: "oklch(55% 0.02 20)",
     sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "HOTEL MYSTAYS Higashi Ikebukuro — Higashi Ikebukuro 4-39-13, Toshima-ku, Tokyo, Japon (arrivée 21 oct. 15h00, départ 25 oct. 11h00)" },
