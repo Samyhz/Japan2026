@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Torii rose entoure de fleurs de cerisier">
+  <title>Road Trip Japon 2026</title>
+  <rect width="64" height="64" fill="#ffffff"/>
+  <g transform="translate(9.50 9.00) rotate(-12.0)">
+    <ellipse cx="0" cy="0" rx="3.24" ry="4.18" fill="#efacb5" transform="translate(0.00 -3.89) rotate(0.0)"/>
+    <ellipse cx="0" cy="0" rx="3.24" ry="4.18" fill="#efacb5" transform="translate(3.70 -1.20) rotate(72.0)"/>
+    <ellipse cx="0" cy="0" rx="3.24" ry="4.18" fill="#efacb5" transform="translate(2.29 3.15) rotate(144.0)"/>
+    <ellipse cx="0" cy="0" rx="3.24" ry="4.18" fill="#efacb5" transform="translate(-2.29 3.15) rotate(216.0)"/>
+    <ellipse cx="0" cy="0" rx="3.24" ry="4.18" fill="#efacb5" transform="translate(-3.70 -1.20) rotate(288.0)"/>
+    <circle cx="0" cy="0" r="1.37" fill="#b99056"/>
+  </g>
+  <g transform="translate(55.00 8.50) rotate(22.0)">
+    <ellipse cx="0" cy="0" rx="2.97" ry="3.83" fill="#e493a4" transform="translate(0.00 -3.56) rotate(0.0)"/>
+    <ellipse cx="0" cy="0" rx="2.97" ry="3.83" fill="#e493a4" transform="translate(3.39 -1.10) rotate(72.0)"/>
+    <ellipse cx="0" cy="0" rx="2.97" ry="3.83" fill="#e493a4" transform="translate(2.09 2.88) rotate(144.0)"/>
+    <ellipse cx="0" cy="0" rx="2.97" ry="3.83" fill="#e493a4" transform="translate(-2.09 2.88) rotate(216.0)"/>
+    <ellipse cx="0" cy="0" rx="2.97" ry="3.83" fill="#e493a4" transform="translate(-3.39 -1.10) rotate(288.0)"/>
+    <circle cx="0" cy="0" r="1.25" fill="#b99056"/>
+  </g>
+  <g transform="translate(8.00 47.50) rotate(8.0)">
+    <ellipse cx="0" cy="0" rx="3.06" ry="3.94" fill="#e493a4" transform="translate(0.00 -3.67) rotate(0.0)"/>
+    <ellipse cx="0" cy="0" rx="3.06" ry="3.94" fill="#e493a4" transform="translate(3.49 -1.13) rotate(72.0)"/>
+    <ellipse cx="0" cy="0" rx="3.06" ry="3.94" fill="#e493a4" transform="translate(2.16 2.97) rotate(144.0)"/>
+    <ellipse cx="0" cy="0" rx="3.06" ry="3.94" fill="#e493a4" transform="translate(-2.16 2.97) rotate(216.0)"/>
+    <ellipse cx="0" cy="0" rx="3.06" ry="3.94" fill="#e493a4" transform="translate(-3.49 -1.13) rotate(288.0)"/>
+    <circle cx="0" cy="0" r="1.29" fill="#b99056"/>
+  </g>
+  <g transform="translate(56.50 48.50) rotate(-18.0)">
+    <ellipse cx="0" cy="0" rx="2.79" ry="3.60" fill="#efacb5" transform="translate(0.00 -3.35) rotate(0.0)"/>
+    <ellipse cx="0" cy="0" rx="2.79" ry="3.60" fill="#efacb5" transform="translate(3.18 -1.03) rotate(72.0)"/>
+    <ellipse cx="0" cy="0" rx="2.79" ry="3.60" fill="#efacb5" transform="translate(1.97 2.71) rotate(144.0)"/>
+    <ellipse cx="0" cy="0" rx="2.79" ry="3.60" fill="#efacb5" transform="translate(-1.97 2.71) rotate(216.0)"/>
+    <ellipse cx="0" cy="0" rx="2.79" ry="3.60" fill="#efacb5" transform="translate(-3.18 -1.03) rotate(288.0)"/>
+    <circle cx="0" cy="0" r="1.18" fill="#b99056"/>
+  </g>
+  <circle cx="22.0" cy="5.0" r="1.6" fill="#f9d8dd"/>
+  <circle cx="43.0" cy="4.6" r="1.4" fill="#f9d8dd"/>
+  <circle cx="3.8" cy="26.5" r="1.5" fill="#f9d8dd"/>
+  <circle cx="60.6" cy="27.5" r="1.4" fill="#f9d8dd"/>
+  <circle cx="20.5" cy="61.0" r="1.4" fill="#f9d8dd"/>
+  <circle cx="32.0" cy="62.0" r="1.7" fill="#efacb5"/>
+  <circle cx="45.0" cy="61.0" r="1.5" fill="#f9d8dd"/>
+  <g fill="#c14d69">
+    <path d="M19.2 24 H25.2 L26.4 57 H17.8 Z"/>
+    <path d="M38.8 24 H44.8 L46.2 57 H37.6 Z"/>
+    <path d="M13.0 33.0 H51.0 V38.4 H13.0 Z"/>
+    <path d="M29.7 27.0 H34.3 V33.6 H29.7 Z"/>
+    <path d="M4.5 12.6 Q32 19.8 59.5 12.6 L59.5 19.0 Q32 26.2 4.5 19.0 Z"/>
+  </g>
+  <path d="M8.0 20.0 Q32 26.6 56 20.0 L56 22.6 Q32 29.2 8 22.6 Z" fill="#efacb5"/>
+</svg>
