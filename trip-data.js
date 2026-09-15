@@ -161,10 +161,10 @@ export const days = [
   {
     id: "J16-21", date: "Samedi 17 → Mercredi 21 Octobre 2026", title: "Okinawa", kanji: "沖縄",
     color: "oklch(62% 0.11 195)",
-    sleep: { place: "Onna, Okinawa", tbd: false, note: "2380, Onna, Kunigami Gun Onna Son, Okinawa Ken, 904-0411, Japan — arrivée 17 oct. dès 16h00, départ 21 oct. avant 11h00" },
+    sleep: { place: "Villa Valiosa On The Beach, Onna", tbd: false, note: "6349-3 Onna, Onna-son, Kunigami-gun, Okinawa 904-0411, Japon — arrivée 17 oct. dès 15h00, départ 21 oct. avant 11h00" },
     stops: [
       { name: "Vol Tokyo (NRT) → Naha (OKA)", address: "Aéroport de Narita, Chiba, Japon", note: "Peach Aviation MM507 — 14h30 → 17h40 (3h10, vol direct, classe économique)", lat: 35.7719, lng: 140.3929 },
-      { name: "Logement à Onna", address: "2380, Onna, Kunigami Gun Onna Son, Okinawa Ken, 904-0411, Japan", note: "Arrivée 17 oct. dès 16h00 — départ 21 oct. avant 11h00", lat: 26.5044, lng: 127.8642, isSleep: true },
+      { name: "Villa Valiosa On The Beach", address: "6349-3 Onna, Onna-son, Kunigami-gun, Okinawa 904-0411, Japon", note: "Arrivée 17 oct. dès 15h00 (dernière arrivée 24h00) — départ 21 oct. avant 11h00", info: "Villa de bord de plage sur la côte ouest d'Onna : 197 m² sur deux niveaux, 3 chambres, piscine privée à débordement et bain extérieur face à la mer. Environ 50 minutes de l'aéroport de Naha, 5 minutes de l'échangeur de Yaka.", lat: 26.4875, lng: 127.8451, isSleep: true },
       { name: "Okinawa", image: "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%87%E5%BA%A7%E3%83%93%E3%83%BC%E3%83%81_-_panoramio.jpg?width=800", imageCredit: "funk bass — CC BY 3.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3A%E4%B8%87%E5%BA%A7%E3%83%93%E3%83%BC%E3%83%81_-_panoramio.jpg", address: "Japon", note: "Voir quoi faire", info: "Archipel subtropical au sud du Japon, à la culture Ryūkyū distincte, réputé pour ses plages et ses fonds marins.", lat: 26.2124, lng: 127.6809, tbd: true },
     ],
   },
