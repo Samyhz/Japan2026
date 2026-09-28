@@ -5,8 +5,8 @@ export const days = [
     color: "oklch(66% 0.17 0)",
     sleep: { place: "Narita", tbd: false, note: "International Garden Hotel Narita — 286-0133 Chiba, Narita, Yoshikura 241-1, Japon" },
     stops: [
-      { name: "Vol Paris (CDG) → Tokyo (NRT)", address: "Aéroport Charles-de-Gaulle, Paris, France", note: "Eva Airways BR88 / BR184 — 30 sept. 11h20 → 1er oct. 12h25 (1 escale, 18h05, classe économique)", lat: 49.0097, lng: 2.5479, noMap: true },
-      { name: "International Garden Hotel Narita", address: "286-0133 Chiba, Narita, Yoshikura 241-1, Japon", note: "Nuit du 1er au 2 octobre — n° d'enregistrement 688200819 (recommandé ZY26081017303790)", lat: 35.7645, lng: 140.3606, isSleep: true },
+      { name: "Vol Paris (CDG) → Tokyo (NRT)", address: "Aéroport Charles-de-Gaulle, Paris, France", note: "Vol avec une escale — départ le 30 septembre, arrivée à Narita le 1er octobre", lat: 49.0097, lng: 2.5479, noMap: true },
+      { name: "International Garden Hotel Narita", address: "286-0133 Chiba, Narita, Yoshikura 241-1, Japon", note: "Nuit du 1er au 2 octobre", lat: 35.7645, lng: 140.3606, isSleep: true },
     ],
   },
   {
@@ -26,7 +26,7 @@ export const days = [
   {
     id: "J2", date: "Samedi 3 Octobre 2026", title: "Hakone", kanji: "箱根",
     color: "oklch(66% 0.17 50)",
-    sleep: { place: "Gotenba", tbd: false, note: "Hotel KAN-RAKU Premier Fujisan — 165-1 Juyuzawa, Gotemba, Shizuoka 412-0041, Japon (n° d'enregistrement 688217523)" },
+    sleep: { place: "Gotenba", tbd: false, note: "Hotel KAN-RAKU Premier Fujisan — 165-1 Juyuzawa, Gotemba, Shizuoka 412-0041, Japon" },
     stops: [
       { name: "Hakone Turnpike Ltd. Road Management Office", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Hakone_Turnpike_20140412-1.jpg?width=800", imageCredit: "PekePON — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Hakone_Turnpike", address: "2 Chome−22−1, Hayakawa, Odawara, Kanagawa 250-0021, Japon", note: "Depuis le centre de Kamakura", info: "Route à péage de 15,8 km ouverte en 1955 entre Odawara et Hakone, surnommée le « Nürburgring japonais » : terrain d'essai historique des constructeurs et lieu de rassemblements automobiles.", lat: 35.244, lng: 139.135, leg: { time: "55 minutes", km: 45 } },
       { name: "Mt. Taikan Observation Deck", image: "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Mount_Fuji_from_Lake_Ashi.jpg?width=800", imageCredit: "Quercus acuta — CC0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AView_of_Mount_Fuji_from_Lake_Ashi.jpg", address: "Hayakawa, Odawara, Kanagawa 250-0021, Japon", info: "Point de vue au sommet du Hakone Turnpike, avec panorama sur le Mont Fuji ; lieu de rendez-vous classique des événements automobiles.", lat: 35.235, lng: 139.13, leg: { time: "15 minutes", km: 15 } },
@@ -34,7 +34,7 @@ export const days = [
       { name: "Bikers Paradise South Hakone", address: "Hakone, Kanagawa, Japon", info: "Point de rassemblement connu des motards, sur les routes de montagne sinueuses du sud de Hakone.", lat: 35.212, lng: 139.02 },
       { name: "Mikuni Pass", address: "Hakone, Kanagawa, Japon", note: "Point de vue", info: "Col de montagne à la limite entre Hakone et la péninsule d'Izu, avec vue sur le Mont Fuji et la baie de Suruga par temps dégagé.", lat: 35.228, lng: 138.998 },
       { name: "Hakone Ashinoko Observation Park", image: "https://commons.wikimedia.org/wiki/Special:FilePath/260505_Moto-Hakone_Hakone_Japan01s3.jpg?width=800", imageCredit: "663highland — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3A260505_Moto-Hakone_Hakone_Japan01s3.jpg", address: "Hakone, Kanagawa, Japon", info: "Point de vue sur le lac Ashi (Ashinoko), lac volcanique emblématique de Hakone, avec le Mont Fuji en toile de fond par beau temps.", lat: 35.205, lng: 139.023 },
-      { name: "Dormir à Gotenba — Hotel KAN-RAKU Premier Fujisan", address: "165-1 Juyuzawa, Gotemba, Shizuoka 412-0041, Japon", note: "N° d'enregistrement 688217523", lat: 35.305, lng: 138.935, isSleep: true },
+      { name: "Dormir à Gotenba — Hotel KAN-RAKU Premier Fujisan", address: "165-1 Juyuzawa, Gotemba, Shizuoka 412-0041, Japon", lat: 35.305, lng: 138.935, isSleep: true },
     ],
   },
   {
@@ -97,20 +97,20 @@ export const days = [
   {
     id: "J8", date: "Vendredi 9 Octobre 2026", title: "Dotonbori → Kyoto", kanji: "京都",
     color: "oklch(66% 0.17 230)",
-    sleep: { place: "Kyoto", tbd: false, note: "Kyoto Plaza Hotel — Minami-ku Nishikujo Zaou-cho 28agaru, Kyoto, Japon (arrivée 9 oct. 15h00-22h00, départ 10 oct. 10h00) — les autres arrivent" },
+    sleep: { place: "Kyoto", tbd: false, note: "Kyoto Plaza Hotel — Minami-ku Nishikujo Zaou-cho 28agaru, Kyoto, Japon (arrivée 9 oct. 15h00-22h00, départ 10 oct. 10h00)" },
     stops: [
       { name: "Dotonbori", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Osaka_Dotonbori_Ebisu_Bridge.jpg?width=800", imageCredit: "Type specimen — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/D%C5%8Dtonbori", address: "Osaka, Japon", note: "Le matin", lat: 34.6687, lng: 135.5013 },
       { name: "Arashiyama Takao Pk Wy", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Bamboo_Grove%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg?width=800", imageCredit: "Basile Morin — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ABamboo_Grove%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg", address: "Kyoto, Japon", note: "Selon l'emplacement du logement à Kyoto", info: "Route pittoresque desservant Arashiyama, quartier de Kyoto connu pour sa forêt de bambous et le pont Togetsukyo.", lat: 35.048, lng: 135.65 },
-      { name: "Kyoto — Kyoto Plaza Hotel", address: "Minami-ku Nishikujo Zaou-cho 28agaru, Kyoto, Japon", note: "Journée tranquille, les autres seront là", lat: 35.0116, lng: 135.7681, isSleep: true },
+      { name: "Kyoto — Kyoto Plaza Hotel", address: "Minami-ku Nishikujo Zaou-cho 28agaru, Kyoto, Japon", note: "Journée tranquille", lat: 35.0116, lng: 135.7681, isSleep: true },
     ],
   },
   {
     id: "J9", date: "Samedi 10 → Lundi 12 Octobre 2026", title: "Takayama & Shirakawa-go", kanji: "高山",
     color: "oklch(66% 0.17 260)",
-    sleep: { place: "Takayama puis Nakatsugawa", tbd: false, note: "Logé chez des amis à Takayama (10-12 oct.), 36°09'29.6\"N 137°14'32.0\"E — puis AB Hotel Nakatsugawa le 12 oct." },
+    sleep: { place: "Takayama puis Nakatsugawa", tbd: false, note: "Logé chez des amis à Takayama (10-12 oct.) — puis AB Hotel Nakatsugawa le 12 oct." },
     stops: [
       { name: "Départ vers Takayama", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Takayama%27s_Early_Winter_Welcome_%28NE%29.jpg?width=800", imageCredit: "Nickaura (Nick Sevarg) — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Takayama%2C_Gifu", address: "Gifu, Japon", info: "Vieille ville de montagne aux ruelles de l'époque d'Edo bien préservées, dans les Alpes japonaises.", lat: 36.1461, lng: 137.252 },
-      { name: "Logement chez des amis", address: "Takayama, Gifu, Japon", note: "Arrivée 10 oct., départ 12 oct.", lat: 36.158222, lng: 137.242222, isSleep: true },
+      { name: "Logement chez des amis", address: "Takayama, Gifu, Japon", note: "Arrivée 10 oct., départ 12 oct. — localisation au niveau de la ville", lat: 36.1461, lng: 137.2522, isSleep: true },
       { name: "Shirakawa-go", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ogi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg?width=800", imageCredit: "663highland — CC BY 2.5, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AOgi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg", address: "Gifu, Japon", note: "Aller-retour depuis Takayama le 11 octobre — se garer au Shirakawagō Seseragi Park Parking Lot", info: "Village inscrit au patrimoine mondial de l'UNESCO, connu pour ses fermes traditionnelles au toit de chaume gassho-zukuri.", lat: 36.258, lng: 136.906 },
       { name: "Nakatsugawa — AB Hotel Nakatsugawa", address: "258-1 Tegano, Nakatsugawa, Gifu 508-0015, Japon", note: "Arrivée 12 oct. 15h00-0h00, départ 13 oct. 10h00", lat: 35.497, lng: 137.493, isSleep: true },
     ],
@@ -118,13 +118,13 @@ export const days = [
   {
     id: "J12", date: "Mardi 13 Octobre 2026", title: "Nakasendo → Fujiyoshida", kanji: "木曽",
     color: "oklch(66% 0.17 290)",
-    sleep: { place: "Fujiyoshida", tbd: false, note: "Airbnb — 5-chōme-11-11 Kamiyoshida, Fujiyoshida, Yamanashi 403-0005, Japon" },
+    sleep: { place: "Fujiyoshida", tbd: false, note: "Airbnb dans le quartier de Kamiyoshida, Fujiyoshida, Yamanashi" },
     stops: [
       { name: "Départ de Nakatsugawa vers le Nakasendo", image: "https://commons.wikimedia.org/wiki/Special:FilePath/1_magome_juku_2024.jpg?width=800", imageCredit: "Chensiyuan — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3A1_magome_juku_2024.jpg", address: "Gifu, Japon", note: "Randonnée de 3h", info: "Ancienne route de l'époque d'Edo reliant Kyoto à Edo (Tokyo) ; le tronçon Magome-Tsumago est l'un des mieux préservés, pavé et bordé de forêts.", lat: 35.528, lng: 137.567 },
       { name: "Kamikochi", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kamikochi_-_Kamikochi6538.jpg?width=800", imageCredit: "lumoplank — CC0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AKamikochi_-_Kamikochi6538.jpg", address: "Nagano, Japon", note: "Selon l'heure après la randonnée", info: "Vallée alpine préservée des Alpes japonaises du Nord, fermée à la circulation privée ; départ de nombreuses randonnées.", lat: 36.25, lng: 137.636 },
       { name: "Lac Shirakaba", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Shirakaba_from_Lake_Shirakaba_Observatory_1.jpg?width=800", imageCredit: "Tmv — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ALake_Shirakaba_from_Lake_Shirakaba_Observatory_1.jpg", address: "Nagano, Japon", info: "Lac de montagne à environ 1400 m d'altitude sur les hauts plateaux de Nagano, entouré de bouleaux (shirakaba) et point de départ de la Venus Line.", lat: 36.093, lng: 138.333 },
       { name: "ビーナスライン (Venus Line)", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Venus_Line_01.jpg?width=800", imageCredit: "Douglaspperkins — CC BY 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AVenus_Line_01.jpg", address: "Nagano, Japon", info: "Route de montagne panoramique reliant les hauts plateaux de Nagano, entre alpages et vues dégagées.", lat: 36.05, lng: 138.3 },
-      { name: "Airbnb à Fujiyoshida", address: "5-chōme-11-11 Kamiyoshida, Fujiyoshida, Yamanashi 403-0005, Japon", lat: 35.488, lng: 138.806, isSleep: true },
+      { name: "Airbnb à Fujiyoshida", address: "Kamiyoshida, Fujiyoshida, Yamanashi, Japon", note: "Localisation au niveau du quartier", lat: 35.488, lng: 138.806, isSleep: true },
     ],
   },
   {
@@ -163,7 +163,7 @@ export const days = [
     color: "oklch(62% 0.11 195)",
     sleep: { place: "Villa Valiosa On The Beach, Onna", tbd: false, note: "6349-3 Onna, Onna-son, Kunigami-gun, Okinawa 904-0411, Japon — arrivée 17 oct. dès 15h00, départ 21 oct. avant 11h00" },
     stops: [
-      { name: "Vol Tokyo (NRT) → Naha (OKA)", address: "Aéroport de Narita, Chiba, Japon", note: "Peach Aviation MM507 — 14h30 → 17h40 (3h10, vol direct, classe économique)", lat: 35.7719, lng: 140.3929 },
+      { name: "Vol Tokyo (NRT) → Naha (OKA)", address: "Aéroport de Narita, Chiba, Japon", note: "Vol direct, environ 3h10", lat: 35.7719, lng: 140.3929 },
       { name: "Villa Valiosa On The Beach", address: "6349-3 Onna, Onna-son, Kunigami-gun, Okinawa 904-0411, Japon", note: "Arrivée 17 oct. dès 15h00 (dernière arrivée 24h00) — départ 21 oct. avant 11h00", info: "Villa de bord de plage sur la côte ouest d'Onna : 197 m² sur deux niveaux, 3 chambres, piscine privée à débordement et bain extérieur face à la mer. Environ 50 minutes de l'aéroport de Naha, 5 minutes de l'échangeur de Yaka.", lat: 26.4875, lng: 127.8451, isSleep: true },
       { name: "Okinawa", image: "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%87%E5%BA%A7%E3%83%93%E3%83%BC%E3%83%81_-_panoramio.jpg?width=800", imageCredit: "funk bass — CC BY 3.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3A%E4%B8%87%E5%BA%A7%E3%83%93%E3%83%BC%E3%83%81_-_panoramio.jpg", address: "Japon", note: "Voir quoi faire", info: "Archipel subtropical au sud du Japon, à la culture Ryūkyū distincte, réputé pour ses plages et ses fonds marins.", lat: 26.2124, lng: 127.6809, tbd: true },
     ],
@@ -173,7 +173,7 @@ export const days = [
     color: "oklch(55% 0.02 20)",
     sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "HOTEL MYSTAYS Higashi Ikebukuro — Higashi Ikebukuro 4-39-13, Toshima-ku, Tokyo, Japon (arrivée 21 oct. 15h00, départ 25 oct. 11h00)" },
     stops: [
-      { name: "Vol Naha (OKA) → Tokyo (NRT)", address: "Aéroport de Naha, Okinawa, Japon", note: "Peach Aviation MM504 — 12h15 → 14h55 (2h40, vol direct, classe économique)", lat: 26.1958, lng: 127.6458 },
+      { name: "Vol Naha (OKA) → Tokyo (NRT)", address: "Aéroport de Naha, Okinawa, Japon", note: "Vol direct, environ 2h40", lat: 26.1958, lng: 127.6458 },
     ],
   },
   {
@@ -269,7 +269,7 @@ export const days = [
       { name: "Départ de Nikko", address: "Nikko, Tochigi, Japon", note: "Direction Ōuchi-juku", lat: 36.7576, lng: 139.5991 },
       { name: "Ōuchi-juku", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ouchijuku_2006-11-12.jpg?width=800", imageCredit: "Geomr — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AOuchijuku_2006-11-12.jpg", address: "Shimogo, Minamiaizu District, Fukushima, Japon", note: "", info: "Ancien village-étape de l'époque Edo sur la route Aizu-Nishi Kaidō, préservé avec ses maisons au toit de chaume.", lat: 37.3336, lng: 139.8607, leg: { time: "2h00", km: 85 } },
       { name: "Château d'Aizuwakamatsu (Tsuruga-jō)", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Fukushima-Sakura_in_Tsuruga_Castle%2C_Aizuwakamatsu_City-m.jpg?width=800", imageCredit: "SQZ — CC BY 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AFukushima-Sakura_in_Tsuruga_Castle%2C_Aizuwakamatsu_City-m.jpg", address: "Aizuwakamatsu, Fukushima, Japon", info: "Château historique reconstruit, symbole de la région d'Aizu et haut lieu de la guerre de Boshin.", lat: 37.4877, lng: 139.9298, leg: { time: "40 minutes", km: 25 } },
-      { name: "Lake Side Hotel Minatoya", address: "Nagahama 870, Inawashiro, Fukushima, Japon", note: "Chambre lits jumeaux vue sur lac — arrivée 16h00-18h00, départ 31 oct. 10h00", lat: 37.5227, lng: 140.0464, leg: { time: "25 minutes", km: 15 }, isSleep: true },
+      { name: "Lake Side Hotel Minatoya", address: "Nagahama 870, Inawashiro, Fukushima, Japon", note: "Arrivée 16h00-18h00, départ 31 oct. 10h00", lat: 37.5227, lng: 140.0464, leg: { time: "25 minutes", km: 15 }, isSleep: true },
     ],
   },
   {
@@ -299,7 +299,7 @@ export const days = [
     stops: [
       { name: "Départ de Fukushima", address: "Fukushima, Japon", lat: 37.7503, lng: 140.4676 },
       { name: "Honda Collection Hall", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Honda_Collection_Hall_2011.jpg?width=800", imageCredit: "Morio — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AHonda_Collection_Hall_2011.jpg", address: "Motegi, Tochigi, Japon", info: "Musée Honda installé sur le site de Twin Ring Motegi, retraçant l'histoire des motos et voitures de la marque, y compris ses machines de compétition.", lat: 36.5266, lng: 140.2277, leg: { time: "2h00", km: 140 } },
-      { name: "HOTEL MYSTAYS PREMIER Narita", address: "Oyama 31, Narita, Chiba 286-0131, Japon", note: "Chambre double confort — arrivée 15h00, départ 3 nov. 11h00 — hôtel choisi pour sa proximité avec le loueur JDM", lat: 35.7847163, lng: 140.351622, leg: { time: "2h00", km: 130 }, isSleep: true },
+      { name: "HOTEL MYSTAYS PREMIER Narita", address: "Oyama 31, Narita, Chiba 286-0131, Japon", note: "Arrivée 15h00, départ 3 nov. 11h00 — hôtel choisi pour sa proximité avec le loueur JDM", lat: 35.7847163, lng: 140.351622, leg: { time: "2h00", km: 130 }, isSleep: true },
     ],
   },
   {
@@ -308,7 +308,7 @@ export const days = [
     sleep: { place: "Otsuka, Tokyo", tbd: false, note: "APA Hotel Yamanote Otsuka Ekimae Tower — Minami Otsuka 3-31-10, Toshima-ku, Tokyo, Japon (arrivée 3 nov. 15h00, départ 6 nov. 10h00, dernier hôtel du séjour)" },
     stops: [
       { name: "Restitution de la Toyota GR86", address: "Narita, Chiba, Japon", note: "17h30 — réservation confirmée, loueur à proximité du HOTEL MYSTAYS PREMIER Narita", lat: 35.7847163, lng: 140.351622 },
-      { name: "APA Hotel Yamanote Otsuka Ekimae Tower", address: "Minami Otsuka 3-31-10, Toshima-ku, Tokyo, Japon", note: "Chambre simple standard — dernier hôtel du séjour, jusqu'au 6 novembre", lat: 35.7290603, lng: 139.7274953, leg: { time: "1h20", km: 65 }, isSleep: true },
+      { name: "APA Hotel Yamanote Otsuka Ekimae Tower", address: "Minami Otsuka 3-31-10, Toshima-ku, Tokyo, Japon", note: "Dernier hôtel du séjour, jusqu'au 6 novembre", lat: 35.7290603, lng: 139.7274953, leg: { time: "1h20", km: 65 }, isSleep: true },
     ],
   },
   {
@@ -342,7 +342,7 @@ export const days = [
     color: "oklch(55% 0.02 20)",
     sleep: null,
     stops: [
-      { name: "Vol Tokyo (NRT) → Paris (CDG)", address: "Aéroport de Narita, Chiba, Japon", note: "Eva Airways BR197 / BR87 — 6 nov. 14h00 → 7 nov. 8h00 (1 escale, 26h, classe économique)", lat: 35.7719, lng: 140.3929, noMap: true },
+      { name: "Vol Tokyo (NRT) → Paris (CDG)", address: "Aéroport de Narita, Chiba, Japon", note: "Vol avec une escale — départ le 6 novembre, arrivée à Paris le 7 novembre", lat: 35.7719, lng: 140.3929, noMap: true },
     ],
   },
 ];
