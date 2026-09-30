@@ -110,13 +110,6 @@
     .hero-stat-num { font-family:'Shippori Mincho',serif; font-size: clamp(22px,3.6vw,30px); color: var(--ink); font-variant-numeric: tabular-nums; }
     .hero-stat-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-faint); margin-top: 2px; }
 
-    .countdown-wrap { position: relative; z-index: 2; display:flex; justify-content:center; margin: 40px 0 8px; }
-    .countdown { display:flex; gap: clamp(14px,4vw,34px); }
-    .countdown-item { display:flex; flex-direction:column; align-items:center; }
-    .countdown-num { font-family:'Shippori Mincho',serif; font-size: clamp(26px,5vw,38px); color: var(--rose); font-variant-numeric: tabular-nums; }
-    .countdown-label { font-size: 11px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); margin-top: 4px; }
-    .countdown-sep { font-family:'Shippori Mincho',serif; font-size: clamp(20px,4vw,30px); color: var(--sakura-2); align-self: flex-start; margin-top: 2px; }
-    .hero-depart-label { position: relative; z-index: 2; text-align:center; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-top: 22px; }
 
     .mountains { display:block; width:100%; height: auto; margin-top: 46px; }
 
@@ -331,31 +324,6 @@
       <div class="hero-stat"><div class="hero-stat-num" id="stat-stops">—</div><div class="hero-stat-label">Arrêts</div></div>
       <div class="hero-stat"><div class="hero-stat-num" id="stat-km">—</div><div class="hero-stat-label">KM au compteur</div></div>
     </div>
-
-    <div class="countdown-wrap">
-      <div class="countdown">
-        <div class="countdown-item">
-          <div class="countdown-num">{{ countdownDays }}</div>
-          <div class="countdown-label">Jours</div>
-        </div>
-        <div class="countdown-sep">·</div>
-        <div class="countdown-item">
-          <div class="countdown-num">{{ countdownHours }}</div>
-          <div class="countdown-label">Heures</div>
-        </div>
-        <div class="countdown-sep">·</div>
-        <div class="countdown-item">
-          <div class="countdown-num">{{ countdownMinutes }}</div>
-          <div class="countdown-label">Minutes</div>
-        </div>
-        <div class="countdown-sep">·</div>
-        <div class="countdown-item">
-          <div class="countdown-num">{{ countdownSeconds }}</div>
-          <div class="countdown-label">Secondes</div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-depart-label">Avant le départ · vol Paris → Narita</div>
 
     <svg class="mountains" viewBox="0 0 1440 90" preserveAspectRatio="none">
       <path d="M0,90 L0,58 L140,20 L260,50 L400,10 L560,55 L700,28 L860,60 L1000,15 L1180,50 L1300,25 L1440,58 L1440,90 Z" fill="var(--washi-2)"></path>
@@ -737,10 +705,8 @@ function slugify(s) {
   return s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-const DEPARTURE = new Date('2026-09-30T11:20:00+02:00');
-
 class Component extends DCLogic {
-  state = { days: null, checklist: null, checklistOpen: true, visible: {}, countdown: null };
+  state = { days: null, checklist: null, checklistOpen: true, visible: {} };
 
   constructor(props) {
     super(props);
@@ -767,22 +733,10 @@ class Component extends DCLogic {
     }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
     Object.values(this.dayEls).forEach((el) => this.observer.observe(el));
     this.loadData();
-    this.tickCountdown();
-    this.countdownTimer = setInterval(() => this.tickCountdown(), 1000);
   }
 
   componentWillUnmount() {
-    if (this.countdownTimer) clearInterval(this.countdownTimer);
     if (this.observer) this.observer.disconnect();
-  }
-
-  tickCountdown() {
-    const diff = Math.max(0, DEPARTURE.getTime() - Date.now());
-    const days = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    const minutes = Math.floor((diff % 3600000) / 60000);
-    const seconds = Math.floor((diff % 60000) / 1000);
-    this.setState({ countdown: { days, hours, minutes, seconds } });
   }
 
   loadData() {
@@ -855,8 +809,6 @@ class Component extends DCLogic {
         d.translateY = visible[d.id] ? 'translateY(0)' : 'translateY(24px)';
       });
     }
-    const c = this.state.countdown;
-    const pad = (n) => String(n).padStart(2, '0');
     return {
       days: this.state.days,
       mapRef: this.mapRef,
@@ -867,10 +819,6 @@ class Component extends DCLogic {
       checklistToggleLabel: this.state.checklistOpen ? 'Masquer ▲' : 'Afficher ▼',
       toggleChecklist: () => this.toggleChecklist(),
       visible: this.state.visible,
-      countdownDays: c ? pad(c.days) : '--',
-      countdownHours: c ? pad(c.hours) : '--',
-      countdownMinutes: c ? pad(c.minutes) : '--',
-      countdownSeconds: c ? pad(c.seconds) : '--',
     };
   }
 }
@@ -883,10 +831,10 @@ class Component extends DCLogic {
   // the empty placeholder. Silently does nothing where the backend isn't
   // available (e.g. this GitHub Pages "recette" copy has no functions).
   //
-  // The countdown timer re-renders the whole day list every second, which
-  // can recreate these <image-slot> DOM nodes — so results are cached per
-  // day and reapplied on every sighting instead of being fetched once and
-  // left to whatever attribute survives the next render.
+  // Re-renders of the day list (the scroll reveal updates state as sections
+  // come into view) can recreate these <image-slot> DOM nodes — so results
+  // are cached per day and reapplied on every sighting instead of being
+  // fetched once and left to whatever attribute survives the next render.
   const FN = './.netlify/functions';
   const photoCache = new Map(); // day -> src url, or null once confirmed empty
   const pending = new Set();
