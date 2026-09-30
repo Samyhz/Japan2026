@@ -107,10 +107,10 @@ export const days = [
   {
     id: "J9", date: "Samedi 10 → Lundi 12 Octobre 2026", title: "Takayama & Shirakawa-go", kanji: "高山",
     color: "oklch(66% 0.17 260)",
-    sleep: { place: "Takayama puis Nakatsugawa", tbd: false, note: "Logé chez des amis à Takayama (10-12 oct.) — puis AB Hotel Nakatsugawa le 12 oct." },
+    sleep: { place: "Takayama puis Nakatsugawa", tbd: false, note: "Logement à Takayama (10-12 oct.) — puis AB Hotel Nakatsugawa le 12 oct." },
     stops: [
       { name: "Départ vers Takayama", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Takayama%27s_Early_Winter_Welcome_%28NE%29.jpg?width=800", imageCredit: "Nickaura (Nick Sevarg) — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Takayama%2C_Gifu", address: "Gifu, Japon", info: "Vieille ville de montagne aux ruelles de l'époque d'Edo bien préservées, dans les Alpes japonaises.", lat: 36.1461, lng: 137.252 },
-      { name: "Logement chez des amis", address: "Takayama, Gifu, Japon", note: "Arrivée 10 oct., départ 12 oct. — localisation au niveau de la ville", lat: 36.1461, lng: 137.2522, isSleep: true },
+      { name: "Logement à Takayama", address: "Takayama, Gifu, Japon", note: "Arrivée 10 oct., départ 12 oct.", lat: 36.158222, lng: 137.242222, isSleep: true },
       { name: "Shirakawa-go", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ogi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg?width=800", imageCredit: "663highland — CC BY 2.5, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AOgi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg", address: "Gifu, Japon", note: "Aller-retour depuis Takayama le 11 octobre — se garer au Shirakawagō Seseragi Park Parking Lot", info: "Village inscrit au patrimoine mondial de l'UNESCO, connu pour ses fermes traditionnelles au toit de chaume gassho-zukuri.", lat: 36.258, lng: 136.906 },
       { name: "Nakatsugawa — AB Hotel Nakatsugawa", address: "258-1 Tegano, Nakatsugawa, Gifu 508-0015, Japon", note: "Arrivée 12 oct. 15h00-0h00, départ 13 oct. 10h00", lat: 35.497, lng: 137.493, isSleep: true },
     ],
@@ -118,13 +118,13 @@ export const days = [
   {
     id: "J12", date: "Mardi 13 Octobre 2026", title: "Nakasendo → Fujiyoshida", kanji: "木曽",
     color: "oklch(66% 0.17 290)",
-    sleep: { place: "Fujiyoshida", tbd: false, note: "Airbnb dans le quartier de Kamiyoshida, Fujiyoshida, Yamanashi" },
+    sleep: { place: "Fujiyoshida", tbd: false, note: "Airbnb — 5-chōme-11-11 Kamiyoshida, Fujiyoshida, Yamanashi 403-0005, Japon" },
     stops: [
       { name: "Départ de Nakatsugawa vers le Nakasendo", image: "https://commons.wikimedia.org/wiki/Special:FilePath/1_magome_juku_2024.jpg?width=800", imageCredit: "Chensiyuan — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3A1_magome_juku_2024.jpg", address: "Gifu, Japon", note: "Randonnée de 3h", info: "Ancienne route de l'époque d'Edo reliant Kyoto à Edo (Tokyo) ; le tronçon Magome-Tsumago est l'un des mieux préservés, pavé et bordé de forêts.", lat: 35.528, lng: 137.567 },
       { name: "Kamikochi", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kamikochi_-_Kamikochi6538.jpg?width=800", imageCredit: "lumoplank — CC0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AKamikochi_-_Kamikochi6538.jpg", address: "Nagano, Japon", note: "Selon l'heure après la randonnée", info: "Vallée alpine préservée des Alpes japonaises du Nord, fermée à la circulation privée ; départ de nombreuses randonnées.", lat: 36.25, lng: 137.636 },
       { name: "Lac Shirakaba", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Shirakaba_from_Lake_Shirakaba_Observatory_1.jpg?width=800", imageCredit: "Tmv — CC BY-SA 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ALake_Shirakaba_from_Lake_Shirakaba_Observatory_1.jpg", address: "Nagano, Japon", info: "Lac de montagne à environ 1400 m d'altitude sur les hauts plateaux de Nagano, entouré de bouleaux (shirakaba) et point de départ de la Venus Line.", lat: 36.093, lng: 138.333 },
       { name: "ビーナスライン (Venus Line)", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Venus_Line_01.jpg?width=800", imageCredit: "Douglaspperkins — CC BY 4.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3AVenus_Line_01.jpg", address: "Nagano, Japon", info: "Route de montagne panoramique reliant les hauts plateaux de Nagano, entre alpages et vues dégagées.", lat: 36.05, lng: 138.3 },
-      { name: "Airbnb à Fujiyoshida", address: "Kamiyoshida, Fujiyoshida, Yamanashi, Japon", note: "Localisation au niveau du quartier", lat: 35.488, lng: 138.806, isSleep: true },
+      { name: "Airbnb à Fujiyoshida", address: "5-chōme-11-11 Kamiyoshida, Fujiyoshida, Yamanashi 403-0005, Japon", lat: 35.488, lng: 138.806, isSleep: true },
     ],
   },
   {
