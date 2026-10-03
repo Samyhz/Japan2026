@@ -58,10 +58,13 @@
     .nav-etapes { border:1px solid oklch(30% 0.02 30 / 0.22); background: transparent; color: var(--ink); font-family: 'Inter', 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 16px; border-radius: 100px; cursor: pointer; }
     .nav-etapes:hover { border-color: var(--rose); color: var(--rose); }
 
-    /* Sticky day-progress strip: quick chapter navigation for a long
-       single-page itinerary, shown once you've scrolled into it.
+    /* Day-progress strip: quick chapter navigation for a long single-page
+       itinerary, pinned under the navbar and visible at all times.
        Independent plain HTML/JS (see the closing script block) so it
-       always works even if the CDN-loaded React pipeline above hiccups. */
+       always works even if the CDN-loaded React pipeline above hiccups.
+       The script measures it and publishes --day-strip-h, which the hero
+       adds to its own top padding so nothing hides underneath; with no
+       JS there is no strip at all, hence the 0px fallback. */
     .day-strip {
       position: fixed; left: 0; right: 0; z-index: 30; top: var(--day-strip-top, 56px);
       display: flex; align-items: center; gap: 6px;
@@ -70,12 +73,9 @@
       border-bottom: 1px solid oklch(30% 0.02 30 / 0.08);
       padding: 8px clamp(12px,3vw,28px);
       overflow-x: auto; scrollbar-width: none;
-      opacity: 0; visibility: hidden; pointer-events: none;
-      transform: translateY(-8px);
-      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     }
     .day-strip::-webkit-scrollbar { display: none; }
-    .day-strip.visible { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+    .day-strip:empty { display: none; }
     .day-strip-item {
       flex: none; appearance: none; border: 1px solid transparent; background: var(--washi-2);
       color: var(--ink-faint); font-family: 'Inter', 'Noto Sans JP', sans-serif;
@@ -88,7 +88,7 @@
     .hero {
       position: relative; overflow: hidden;
       background: radial-gradient(1100px 700px at 50% 4%, var(--sakura) 0%, var(--washi) 62%);
-      padding: clamp(40px,9vw,90px) clamp(20px,6vw,56px) 0;
+      padding: calc(clamp(40px,9vw,90px) + var(--day-strip-h, 0px)) clamp(20px,6vw,56px) 0;
       text-align: center;
     }
     .hero-sun {
@@ -125,7 +125,7 @@
     .chip { font-size: 13px; background: var(--washi); border: 1px solid var(--sakura-2); color: var(--ink-dim); padding: 5px 12px; border-radius: 100px; text-decoration: none; }
     .chip:hover { border-color: var(--rose); color: var(--rose); text-decoration: none; }
 
-    .map-section { max-width: 1100px; margin: 0 auto; padding: clamp(50px,7vw,72px) clamp(16px,5vw,32px) clamp(30px,6vw,50px); scroll-margin-top: 68px; }
+    .map-section { max-width: 1100px; margin: 0 auto; padding: clamp(50px,7vw,72px) clamp(16px,5vw,32px) clamp(30px,6vw,50px); scroll-margin-top: 110px; }
     .map-head { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom: 18px; }
     .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin-bottom: 6px; }
     .section-title { font-family:'Shippori Mincho',serif; font-weight:700; font-size: clamp(22px,3.4vw,30px); margin:0; color: var(--ink); }
@@ -534,6 +534,10 @@
     renderList(days);
     renderHeroStats(days);
     renderDayStrip(days);
+    // the strip only has a height once it holds chips: re-measure so the hero
+    // padding compensates for it, then set the initial highlight
+    updateDayStripOffset();
+    updateDayStrip();
   });
 
   function renderHeroStats(items) {
@@ -652,18 +656,14 @@
     const navbar = document.querySelector('.navbar');
     const h = navbar ? navbar.getBoundingClientRect().height : 0;
     document.documentElement.style.setProperty('--day-strip-top', h + 'px');
+    const stripH = dayStrip.children.length ? dayStrip.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--day-strip-h', stripH + 'px');
   }
   window.addEventListener('resize', updateDayStripOffset, { passive: true });
   updateDayStripOffset();
   window.setTimeout(updateDayStripOffset, 800); // after webfonts settle navbar height
 
   function updateDayStrip() {
-    const iEl = itineraireEl();
-    const inItinerary = iEl && iEl.getBoundingClientRect().top < window.innerHeight * 0.5 &&
-      iEl.getBoundingClientRect().bottom > 0;
-    dayStrip.classList.toggle('visible', !!inItinerary);
-    if (!inItinerary) return;
-
     const viewportMid = window.innerHeight * 0.35;
     let current = null;
     for (const d of days) {
@@ -671,7 +671,11 @@
       if (!el) continue;
       if (el.getBoundingClientRect().top <= viewportMid) current = d.id;
     }
-    if (current == null) return;
+    if (current == null) {
+      // above the first day (hero/map): nothing is "current" any more
+      dayStrip.querySelectorAll('.day-strip-item.current').forEach((btn) => btn.classList.remove('current'));
+      return;
+    }
     dayStrip.querySelectorAll('.day-strip-item').forEach((btn) => {
       const isCurrent = btn.dataset.dayId === current;
       btn.classList.toggle('current', isCurrent);
