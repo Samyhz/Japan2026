@@ -84,6 +84,9 @@
     }
     .day-strip-item:hover { color: var(--ink); border-color: oklch(30% 0.02 30 / 0.2); }
     .day-strip-item.current { background: var(--day-strip-accent, var(--rose)); color: #fff; }
+    /* journée du jour : repère discret, pour comprendre où la page a atterri */
+    .day-strip-item.today { border-color: var(--rose); color: var(--rose); }
+    .day-strip-item.today.current { color: #fff; }
 
     .hero {
       position: relative; overflow: hidden;
@@ -538,6 +541,7 @@
     // padding compensates for it, then set the initial highlight
     updateDayStripOffset();
     updateDayStrip();
+    openOnToday(days);
   });
 
   function renderHeroStats(items) {
@@ -702,6 +706,114 @@
       else setActiveTab('');
     });
   }, { passive: true });
+
+  /* ---- Ouverture sur la journée du jour (mobile) ---------------------
+     Pendant le voyage, le site s'ouvre directement sur l'étape du jour
+     plutôt qu'en haut de page : sur un téléphone, remonter 30 journées
+     pour retrouver aujourd'hui n'a pas de sens. Avant le départ et une
+     fois le voyage terminé, la page s'ouvre normalement sur le hero.
+     Les dates sont lues depuis les libellés français de trip-data.js —
+     aucun champ en double à maintenir ; un libellé illisible fait juste
+     retomber sur le comportement classique. */
+  const MONTHS = {
+    janvier: 1, février: 2, fevrier: 2, mars: 3, avril: 4, mai: 5, juin: 6, juillet: 7,
+    août: 8, aout: 8, septembre: 9, octobre: 10, novembre: 11, décembre: 12, decembre: 12,
+  };
+  const MONTH_RE = /janvier|février|fevrier|mars|avril|mai|juin|juillet|août|aout|septembre|octobre|novembre|décembre|decembre/;
+
+  function isoDate(y, m, d) {
+    return y + '-' + String(m).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+  }
+
+  function parseDatePart(chunk, fallbackMonth) {
+    const d = chunk.match(/(\d{1,2})/);
+    if (!d) return null;
+    const m = chunk.toLowerCase().match(MONTH_RE);
+    const month = m ? MONTHS[m[0]] : fallbackMonth;
+    if (!month) return null;
+    return { day: +d[1], month };
+  }
+
+  // "Samedi 10 → Lundi 12 Octobre 2026" -> { start: '2026-10-10', end: '2026-10-12' }
+  function parseDayRange(label) {
+    const ym = String(label).match(/(\d{4})\s*$/);
+    if (!ym) return null;
+    const year = +ym[1];
+    const [a, b] = String(label).replace(/\s*\d{4}\s*$/, '').split(/→|—|–/).map((s) => s.trim());
+    const end = parseDatePart(b || a, null);
+    if (!end) return null;
+    const start = b ? parseDatePart(a, end.month) || end : end;
+    return { start: isoDate(year, start.month, start.day), end: isoDate(year, end.month, end.day) };
+  }
+
+  function todayIso() {
+    const n = new Date(); // date locale de l'appareil (donc JST une fois sur place)
+    return isoDate(n.getFullYear(), n.getMonth() + 1, n.getDate());
+  }
+
+  // dernière journée dont l'intervalle contient aujourd'hui : le 21 octobre
+  // appartient à la fois au bloc Okinawa et au retour à Tokyo, et c'est le
+  // retour qui est la journée du jour
+  function currentDayId(items) {
+    const today = todayIso();
+    let found = null;
+    for (const d of items) {
+      const r = parseDayRange(d.date);
+      if (r && today >= r.start && today <= r.end) found = d.id;
+    }
+    return found;
+  }
+
+  function markTodayChip(id) {
+    const chip = dayStrip.querySelector('.day-strip-item[data-day-id="' + id + '"]');
+    if (chip) {
+      chip.classList.add('today');
+      chip.title = "Aujourd'hui · " + chip.title;
+    }
+  }
+
+  function jumpWithoutAnimation(el) {
+    const root = document.documentElement;
+    const previous = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto'; // sinon on déroule toute la page en fondu
+    el.scrollIntoView({ block: 'start' });
+    root.style.scrollBehavior = previous;
+  }
+
+  function openOnToday(items) {
+    const id = currentDayId(items);
+    if (!id) return; // hors voyage : hero classique
+    markTodayChip(id);
+
+    const onMobile = window.matchMedia('(max-width: 820px)').matches;
+    // un lien vers une étape précise ou une position déjà restaurée par le
+    // navigateur priment sur le saut automatique
+    if (!onMobile || location.hash || window.scrollY > 10) return;
+
+    let tries = 0;
+    const settle = () => {
+      const el = document.getElementById('day-' + id);
+      if (!el) {
+        // l'itinéraire est rendu par le runtime React chargé depuis un CDN :
+        // on patiente, et on abandonne proprement s'il ne vient jamais
+        if (++tries < 60) return window.setTimeout(settle, 100);
+        return;
+      }
+      jumpWithoutAnimation(el);
+      setActiveTab('itineraire');
+      updateDayStrip();
+      // les photos et la carte arrivent après coup et décalent la mise en
+      // page : on se recale une fois, sauf si la personne a déjà scrollé
+      const landed = window.scrollY;
+      window.setTimeout(() => {
+        if (Math.abs(window.scrollY - landed) < 4) {
+          jumpWithoutAnimation(el);
+          updateDayStrip();
+        }
+      }, 700);
+    };
+    settle();
+  }
 </script>
 
 <script type="text/x-dc" data-dc-script>
