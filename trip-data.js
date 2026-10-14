@@ -128,19 +128,20 @@ export const days = [
     ],
   },
   {
-    id: "J13", date: "Mercredi 14 Octobre 2026", title: "Lac Kawaguchi", kanji: "河口湖",
+    id: "J13", date: "Mercredi 14 Octobre 2026", title: "Lac Kawaguchi → Tokyo", kanji: "河口湖",
     color: "oklch(66% 0.17 320)",
-    sleep: { place: "Fujiyoshida", tbd: false },
+    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "Hotel Route-Inn Tokyo Ikebukuro — Toshima-ku Higashiikebukuro 3-5-5, Tokyo, Japon (arrivée 14 oct. 15h00, départ 17 oct. 10h00)" },
     stops: [
       { name: "Lawson Fujikawaguchiko Town Hall", image: "https://commons.wikimedia.org/wiki/Special:FilePath/%E6%B2%B3%E5%8F%A3%E6%B9%96%E9%A7%85%E5%89%8D%E5%BA%97_%2854216860812%29.jpg?width=800", imageCredit: "Jeffrey Hayes — CC BY 2.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3A%E6%B2%B3%E5%8F%A3%E6%B9%96%E9%A7%85%E5%89%8D%E5%BA%97_%2854216860812%29.jpg", address: "Fujikawaguchiko, Yamanashi, Japon", note: "Photo devant le Lawson", info: "Ce Lawson est devenu un spot photo mondialement connu : le Mont Fuji semble surgir juste au-dessus du magasin.", lat: 35.487, lng: 138.769 },
       { name: "Lac Kawaguchi", image: "https://commons.wikimedia.org/wiki/Special:FilePath/KawaguchiKo.jpg?width=800", imageCredit: "BehBeh — CC BY-SA 3.0, Wikimedia Commons", imageCreditHref: "https://en.wikipedia.org/wiki/Lake_Kawaguchi", address: "Yamanashi, Japon", note: "Balade autour du lac", info: "L'un des cinq lacs de Fuji, le plus accessible depuis Tokyo, réputé pour ses vues du Mont Fuji se reflétant dans l'eau.", lat: 35.5, lng: 138.75, leg: { time: "10 minutes", km: 3 } },
       { name: "Fujiyoshida Retro Shopping Street", address: "3 Chome-13 Shimoyoshida, Fujiyoshida, Yamanashi 403-0004, Japon", note: "Honcho Street — rue Showa rétro avec vue sur le Mont Fuji", info: "Ancienne rue commerçante de l'époque Edo (voie d'accès au Mont Fuji), célèbre pour sa perspective où le Fuji semble surgir au bout de la rue ; meilleure lumière tôt le matin.", lat: 35.4977, lng: 138.8035, leg: { time: "15 minutes", km: 5 } },
+      { name: "Dormir à Ikebukuro — Hotel Route-Inn Tokyo Ikebukuro", address: "Toshima-ku Higashiikebukuro 3-5-5, Tokyo, Japon", note: "Arrivée à partir de 15h00 — 3 nuits, jusqu'au 17 oct. 10h00", lat: 35.7295, lng: 139.7109, leg: { time: "2h00", km: 110 }, isSleep: true },
     ],
   },
   {
     id: "J14", date: "Jeudi 15 Octobre 2026", title: "Garages de Machida & Yokohama", kanji: "神奈川",
     color: "oklch(66% 0.17 350)",
-    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "Hotel Route-Inn Tokyo Ikebukuro — Toshima-ku Higashiikebukuro 3-5-5, Tokyo, Japon (arrivée 14 oct. 15h00, départ 17 oct. 10h00)" },
+    sleep: { place: "Ikebukuro, Tokyo", tbd: false, note: "Hotel Route-Inn Tokyo Ikebukuro — 2e nuit sur 3, départ le 17 avant 10h00" },
     stops: [
       { name: "Tomei Auto Parts", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Subaru_BRZ_engine_%2820413082204%29.jpg?width=800", imageCredit: "Zytonits — CC BY-SA 2.0, Wikimedia Commons", imageCreditHref: "https://commons.wikimedia.org/wiki/File%3ASubaru_BRZ_engine_%2820413082204%29.jpg", address: "5-chome-4-27 Tsuruma, Machida, Tokyo 194-0004, Japon", note: "Horaires à vérifier", info: "Fabricant de pièces performance fondé en 1968, historiquement spécialisé sur les moteurs Nissan (RB26, SR20...) ; siège et showroom à Machida.", lat: 35.546, lng: 139.446, leg: { time: "50 minutes", km: 35 } },
       { name: "Up Garage Yokohama Machida Chief Store", address: "5-chome-1-46 Tsuruma, Machida, Tokyo 194-0004, Japon", note: "Juste à côté — Horaires 10h00 - 20h00", info: "Plus grande chaîne japonaise de pièces auto et moto d'occasion, avec plus de 200 magasins à travers le pays.", lat: 35.5465, lng: 139.4455, leg: { time: "à pied", km: 0 } },
